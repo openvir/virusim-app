@@ -1,0 +1,33 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm test
+  deploy-production:
+    machine:
+      enabled: true
+    working_directory: ~/virusim
+    steps:
+      - checkout
+      - run:
+          name: Deploy virusim to Heroku (Production)
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/virusim-production.git master
+workflows:
+  build-and-test:
+    jobs:
+      - build-and-test
+      - deploy-production:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only: master
