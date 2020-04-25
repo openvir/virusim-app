@@ -5,6 +5,7 @@ import Logo from './components/Logo'
 import Virus from './components/Virus'
 import Cell from './components/Cell'
 import Timeline from './components/Timeline'
+import Zoom from './components/Zoom'
 
 import { Keyframe } from './models/Keyframe'
 
@@ -155,10 +156,7 @@ class App extends Component<Props, State> {
             <p>{this.state.description}</p>
           </div>
         </div>
-        <div className="nav">
-          <button onClick={covid19.move}>Move 1</button>
-          <button onClick={covid19.moveTo}>Move 2</button>
-        </div>
+        <Zoom/>
         <Timeline
           keyframes={keyframes}
           onKeyframeUpdated={this.keyframeUpdated}
