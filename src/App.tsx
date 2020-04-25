@@ -13,11 +13,25 @@ const keyframes = [
     id: 1,
     seconds: 0,
     title: 'Initial',
+    elements: [
+      {
+        element: covid19,
+        x: 0,
+        y: 0,
+      },
+    ],
   },
   {
     id: 2,
     seconds: 30,
     title: 'Key + Lock',
+    elements: [
+      {
+        element: covid19,
+        x: 100,
+        y: 100,
+      },
+    ],
   },
   {
     id: 3,
