@@ -23,7 +23,7 @@ class Timeline extends Component<Props, State> {
       return i * 100
     },
     direction: 'alternate',
-    loop: true,
+    loop: false,
     autoplay: false,
     easing: 'easeInOutSine',
     update: (anim) => {
@@ -53,20 +53,9 @@ class Timeline extends Component<Props, State> {
           style={{ width: '80%' }}
           marks={this.keyFramesToMarks()}
         />
-        <button
-          onClick={() => {
-            this.animation.play()
-          }}
-        >
-          Play
-        </button>
-        <button
-          onClick={() => {
-            this.animation.pause()
-          }}
-        >
-          Pause
-        </button>
+        <button onClick={this.animation.play}>Play</button>
+        <button onClick={this.animation.pause}>Pause</button>
+        <button onClick={this.animation.restart}>Restart</button>
       </div>
     )
   }
