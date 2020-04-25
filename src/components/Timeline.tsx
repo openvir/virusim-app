@@ -35,13 +35,22 @@ class Timeline extends Component<Props, State> {
   }
 
   updateProgress(progress: number) {
-    this.setState({ progress: progress })
+    let { step } = this.state
+
+    if (step + 1 < this.props.keyframes.length) {
+      const nextFrame = this.props.keyframes[step + 1]
+      if (progress >= nextFrame.seconds) {
+        step += 1
+        console.log('Updated step.')
+      }
+    }
+    this.setState({ progress, step })
   }
 
   play = () => {
     this.interval = setInterval(
       () => this.updateProgress(this.state.progress + 1),
-      1000
+      100
     )
 
     anime({
@@ -66,6 +75,7 @@ class Timeline extends Component<Props, State> {
     this.setState(
       {
         progress: 0,
+        step: 0,
       },
       () => {
         this.play()
