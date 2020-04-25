@@ -17,6 +17,7 @@ type Props = {
 type State = {
   progress: number
   step: number
+  animationStep: number
   playing: boolean
 }
 
@@ -26,6 +27,7 @@ class Timeline extends Component<Props, State> {
   state: Readonly<State> = {
     progress: 0,
     step: 0,
+    animationStep: -1,
     playing: false,
   }
 
@@ -43,6 +45,9 @@ class Timeline extends Component<Props, State> {
       this.props.onKeyframeUpdated(currentFrame)
     }
     if (step + 1 < this.props.keyframes.length) {
+      this.setState({
+        animationStep: step + 1,
+      })
       const nextFrame = this.props.keyframes[step + 1]
       for (const element of nextFrame.elements) {
         moveElement(
