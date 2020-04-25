@@ -157,10 +157,12 @@ class App extends Component<Props, State> {
           </div>
         </div>
         <Zoom/>
-        <Timeline
-          keyframes={keyframes}
-          onKeyframeUpdated={this.keyframeUpdated}
-        />
+        <div className="bottombar">
+          <Timeline
+            keyframes={keyframes}
+            onKeyframeUpdated={this.keyframeUpdated}
+          />
+        </div>
       </div>
     )
   }

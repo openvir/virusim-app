@@ -2,11 +2,17 @@
 html,
 body {
   background: $lightblue;
+  height: 100%;
+}
+
+#root {
+    height: 100%;
 }
 
 .App {
   background: $lightblue;
   color: $primaryColor;
+  height: 100%;
 
   h1 {
     margin-bottom: $gutter-width;
@@ -62,6 +68,13 @@ body {
     position: absolute;
     right: 0;
     top: 0;
+  }
+
+  .bottombar {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
   }
 
   .info-box {
