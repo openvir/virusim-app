@@ -103,6 +103,10 @@ class Timeline extends Component<Props, State> {
     )
   }
 
+  onSliderChange = (e: any) => {
+    this.updateProgress(e)
+  }
+
   render() {
     return (
       <div className="timeline">
@@ -120,7 +124,7 @@ class Timeline extends Component<Props, State> {
           <FontAwesomeIcon icon={faRedo} />
         </button>
         <div className="slider-wrapper">
-          <Slider value={this.state.progress} marks={this.keyFramesToMarks()} />
+          <Slider value={this.state.progress} marks={this.keyFramesToMarks()} onChange={this.onSliderChange} />
         </div>
       </div>
     )
