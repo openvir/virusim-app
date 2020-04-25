@@ -27,7 +27,7 @@ class Timeline extends Component<Props, State> {
   state: Readonly<State> = {
     progress: 0,
     step: 0,
-    animationStep: -1,
+    animationStep: 0,
     playing: false,
   }
 
@@ -60,9 +60,26 @@ class Timeline extends Component<Props, State> {
         }
       }
     } else {
-      for (const element of currentFrame.elements) {
-        moveElement(element.element.getTarget(), element.x, element.y, 1)
+      // we're updating to the last valid position
+      // this can potentially done much more efficient since we only need the last valid position of every element
+      if (this.state.animationStep <= step) {
+        for (let i = this.state.animationStep; i <= step; i++) {
+          const frame = this.props.keyframes[i]
+          for (const element of frame.elements) {
+            moveElement(element.element.getTarget(), element.x, element.y, 1)
+          }
+        }
+      } else {
+        for (let i = this.state.animationStep; i >= step; i--) {
+          const frame = this.props.keyframes[i]
+          for (const element of frame.elements) {
+            moveElement(element.element.getTarget(), element.x, element.y, 1)
+          }
+        }
       }
+      this.setState({
+        animationStep: step,
+      })
     }
   }
 
