@@ -4,6 +4,8 @@ import anime from 'animejs'
 
 import './Timeline.scss'
 import 'rc-slider/assets/index.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay, faPause, faRedo } from '@fortawesome/free-solid-svg-icons'
 
 import { Keyframe } from '../models/Keyframe'
 
@@ -48,14 +50,18 @@ class Timeline extends Component<Props, State> {
   render() {
     return (
       <div className="timeline">
-        <Slider
-          value={this.state.progress}
-          style={{ width: '80%' }}
-          marks={this.keyFramesToMarks()}
-        />
-        <button onClick={this.animation.play}>Play</button>
-        <button onClick={this.animation.pause}>Pause</button>
-        <button onClick={this.animation.restart}>Restart</button>
+        <button onClick={this.animation.play} style={{ marginLeft: '10px' }}>
+          <FontAwesomeIcon icon={faPlay} />
+        </button>
+        <button onClick={this.animation.pause}>
+          <FontAwesomeIcon icon={faPause} />
+        </button>
+        <button onClick={this.animation.restart}>
+          <FontAwesomeIcon icon={faRedo} />
+        </button>
+        <div className="slider-wrapper">
+          <Slider value={this.state.progress} marks={this.keyFramesToMarks()} />
+        </div>
       </div>
     )
   }
