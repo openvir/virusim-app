@@ -62,15 +62,20 @@ class Timeline extends Component<Props, State> {
     }
   }
 
-  updateProgress(progress: number) {
+  setProgress(progress: number) {
     let { step } = this.state
 
-    if (step + 1 < this.props.keyframes.length) {
-      const nextFrame = this.props.keyframes[step + 1]
-      if (progress >= nextFrame.seconds) {
-        step += 1
-        this.stepUpdated(step)
-        console.log('Updated step.')
+    for (let i = 0; i < this.props.keyframes.length; i++) {
+      if (
+        progress >= this.props.keyframes[i].seconds &&
+        (i === this.props.keyframes.length - 1 ||
+          progress < this.props.keyframes[i + 1].seconds)
+      ) {
+        if (i !== step) {
+          step = i
+          this.stepUpdated(step)
+          console.log('Updated step.')
+        }
       }
     }
     this.setState({ progress, step })
@@ -82,7 +87,7 @@ class Timeline extends Component<Props, State> {
     })
     this.stepUpdated(0)
     this.interval = setInterval(
-      () => this.updateProgress(this.state.progress + 1),
+      () => this.setProgress(this.state.progress + 1),
       100
     )
   }
@@ -94,21 +99,16 @@ class Timeline extends Component<Props, State> {
     clearInterval(this.interval)
   }
 
-  restart = () => {
+  reset = () => {
     clearInterval(this.interval)
-    this.setState(
-      {
-        progress: 0,
-        step: 0,
-      },
-      () => {
-        this.play()
-      }
-    )
+    this.setState({
+      playing: false,
+    })
+    this.setProgress(0)
   }
 
   onSliderChange = (e: any) => {
-    this.updateProgress(e)
+    this.setProgress(e)
   }
 
   render() {
@@ -124,7 +124,7 @@ class Timeline extends Component<Props, State> {
         <button onClick={this.pause} disabled={!this.state.playing}>
           <FontAwesomeIcon icon={faPause} />
         </button>
-        <button onClick={this.restart}>
+        <button onClick={this.reset}>
           <FontAwesomeIcon icon={faRedo} />
         </button>
         <div className="slider-wrapper">
