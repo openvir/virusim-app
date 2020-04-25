@@ -44,20 +44,18 @@ class Timeline extends Component<Props, State> {
     }
     if (step + 1 < this.props.keyframes.length) {
       const nextFrame = this.props.keyframes[step + 1]
-      if (nextFrame.elements) {
-        for (const element of nextFrame.elements) {
-          anime({
-            targets: element.element.getTarget(),
-            translateX: 0,
-            translateY: 0,
-            left: `${element.x}px`,
-            top: `${element.y}px`,
-            duration: (nextFrame.seconds - currentFrame.seconds) * 1000,
-            direction: 'forward',
-            easing: 'easeOutElastic(1, .8)',
-            loop: false,
-          })
-        }
+      for (const element of nextFrame.elements) {
+        anime({
+          targets: element.element.getTarget(),
+          translateX: 0,
+          translateY: 0,
+          left: `${element.x}px`,
+          top: `${element.y}px`,
+          duration: (nextFrame.seconds - currentFrame.seconds) * 1000,
+          direction: 'forward',
+          easing: 'easeOutElastic(1, .8)',
+          loop: false,
+        })
       }
     }
   }
