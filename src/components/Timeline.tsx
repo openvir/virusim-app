@@ -17,6 +17,7 @@ type Props = {
 type State = {
   progress: number
   step: number
+  animationStep: number
   playing: boolean
 }
 
@@ -26,6 +27,7 @@ class Timeline extends Component<Props, State> {
   state: Readonly<State> = {
     progress: 0,
     step: 0,
+    animationStep: 0,
     playing: false,
   }
 
@@ -42,16 +44,42 @@ class Timeline extends Component<Props, State> {
     if (this.props.onKeyframeUpdated) {
       this.props.onKeyframeUpdated(currentFrame)
     }
-    if (step + 1 < this.props.keyframes.length) {
-      const nextFrame = this.props.keyframes[step + 1]
-      for (const element of nextFrame.elements) {
-        moveElement(
-          element.element.getTarget(),
-          element.x,
-          element.y,
-          nextFrame.seconds - currentFrame.seconds
-        )
+    if (this.state.playing) {
+      if (step + 1 < this.props.keyframes.length) {
+        this.setState({
+          animationStep: step + 1,
+        })
+        const nextFrame = this.props.keyframes[step + 1]
+        for (const element of nextFrame.elements) {
+          moveElement(
+            element.element.getTarget(),
+            element.x,
+            element.y,
+            nextFrame.seconds - currentFrame.seconds
+          )
+        }
       }
+    } else {
+      // we're updating to the last valid position
+      // this can potentially done much more efficient since we only need the last valid position of every element
+      if (this.state.animationStep <= step) {
+        for (let i = this.state.animationStep; i <= step; i++) {
+          const frame = this.props.keyframes[i]
+          for (const element of frame.elements) {
+            moveElement(element.element.getTarget(), element.x, element.y, 1)
+          }
+        }
+      } else {
+        for (let i = this.state.animationStep; i >= step; i--) {
+          const frame = this.props.keyframes[i]
+          for (const element of frame.elements) {
+            moveElement(element.element.getTarget(), element.x, element.y, 1)
+          }
+        }
+      }
+      this.setState({
+        animationStep: step,
+      })
     }
   }
 
@@ -82,13 +110,17 @@ class Timeline extends Component<Props, State> {
   }
 
   play = () => {
-    this.setState({
-      playing: true,
-    })
-    this.stepUpdated(this.state.step)
-    this.interval = setInterval(
-      () => this.setProgress(this.state.progress + 1),
-      100
+    this.setState(
+      {
+        playing: true,
+      },
+      () => {
+        this.stepUpdated(this.state.step)
+        this.interval = setInterval(
+          () => this.setProgress(this.state.progress + 1),
+          100
+        )
+      }
     )
   }
 
@@ -112,6 +144,7 @@ class Timeline extends Component<Props, State> {
   }
 
   onSliderChange = (progress: number) => {
+    this.pause()
     this.setProgress(progress)
   }
 

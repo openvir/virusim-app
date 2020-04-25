@@ -1,12 +1,19 @@
 import anime from 'animejs'
 
+const previousAnimations: any = {}
+
 export function moveElement(
   target: string,
   x: number,
   y: number,
   duration: number
 ) {
-  anime({
+  const previousAnimation = previousAnimations[target]
+  if (previousAnimation) {
+    // this should be destroyed, but apparently does not exist
+    previousAnimation.pause()
+  }
+  previousAnimations[target] = anime({
     targets: target,
     translateX: 0,
     translateY: 0,
