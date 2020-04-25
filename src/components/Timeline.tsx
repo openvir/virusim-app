@@ -11,6 +11,7 @@ import { Keyframe } from '../models/Keyframe'
 
 type Props = {
   keyframes: Array<Keyframe>
+  onDescriptionUpdated?: Function
 }
 
 type State = {
@@ -37,8 +38,11 @@ class Timeline extends Component<Props, State> {
   }
 
   stepUpdated(step: number) {
+    const currentFrame = this.props.keyframes[step]
+    if (this.props.onDescriptionUpdated) {
+      this.props.onDescriptionUpdated(currentFrame.description)
+    }
     if (step + 1 < this.props.keyframes.length) {
-      const currentFrame = this.props.keyframes[step]
       const nextFrame = this.props.keyframes[step + 1]
       if (nextFrame.elements) {
         for (const element of nextFrame.elements) {
@@ -124,7 +128,11 @@ class Timeline extends Component<Props, State> {
           <FontAwesomeIcon icon={faRedo} />
         </button>
         <div className="slider-wrapper">
-          <Slider value={this.state.progress} marks={this.keyFramesToMarks()} onChange={this.onSliderChange} />
+          <Slider
+            value={this.state.progress}
+            marks={this.keyFramesToMarks()}
+            onChange={this.onSliderChange}
+          />
         </div>
       </div>
     )

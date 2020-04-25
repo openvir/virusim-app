@@ -12,5 +12,6 @@ export type Keyframe = {
   id: any
   seconds: number
   title: string
+  description: string
   elements: Array<Element>
 }
