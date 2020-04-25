@@ -56,13 +56,13 @@ class Timeline extends Component<Props, State> {
   }
 
   currentStep(progress: number): number {
-    for (let i = 0; i < this.props.keyframes.length; i++) {
+    for (let step = 0; step < this.props.keyframes.length; step++) {
       if (
-        progress >= this.props.keyframes[i].seconds &&
-        (i === this.props.keyframes.length - 1 ||
-          progress < this.props.keyframes[i + 1].seconds)
+        progress >= this.props.keyframes[step].seconds &&
+        (step === this.props.keyframes.length - 1 ||
+          progress < this.props.keyframes[step + 1].seconds)
       ) {
-        return i
+        return step
       }
     }
     return 0
