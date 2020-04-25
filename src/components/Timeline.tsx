@@ -62,7 +62,7 @@ class Timeline extends Component<Props, State> {
     }
   }
 
-  updateProgress(progress: number) {
+  setProgress(progress: number) {
     let { step } = this.state
 
     if (step + 1 < this.props.keyframes.length) {
@@ -82,7 +82,7 @@ class Timeline extends Component<Props, State> {
     })
     this.stepUpdated(0)
     this.interval = setInterval(
-      () => this.updateProgress(this.state.progress + 1),
+      () => this.setProgress(this.state.progress + 1),
       100
     )
   }
@@ -103,7 +103,7 @@ class Timeline extends Component<Props, State> {
   }
 
   onSliderChange = (e: any) => {
-    this.updateProgress(e)
+    this.setProgress(e)
   }
 
   render() {
