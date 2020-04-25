@@ -6,6 +6,7 @@ type Element = {
   element: VisualElement
   x: number
   y: number
+  rotation: number | undefined
 }
 
 export type Keyframe = {

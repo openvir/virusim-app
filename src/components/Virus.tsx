@@ -24,7 +24,7 @@ class Virus extends Component implements VisualElement {
   }
 
   componentDidMount() {
-    this.idle()
+    //this.idle()
   }
 
   render() {
