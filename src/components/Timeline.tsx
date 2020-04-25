@@ -85,7 +85,7 @@ class Timeline extends Component<Props, State> {
     this.setState({
       playing: true,
     })
-    this.stepUpdated(0)
+    this.stepUpdated(this.state.step)
     this.interval = setInterval(
       () => this.setProgress(this.state.progress + 1),
       100
