@@ -145,7 +145,6 @@ class App extends Component<Props, State> {
         <div className="stage">
           <div className="scene">
             {covid19.render()}
-            <Virus />
             <Cell />
           </div>
         </div>
@@ -156,7 +155,7 @@ class App extends Component<Props, State> {
             <p>{this.state.description}</p>
           </div>
         </div>
-        <Zoom/>
+        <Zoom />
         <div className="bottombar">
           <Timeline
             keyframes={keyframes}
