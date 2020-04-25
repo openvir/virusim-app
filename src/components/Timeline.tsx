@@ -44,18 +44,24 @@ class Timeline extends Component<Props, State> {
     if (this.props.onKeyframeUpdated) {
       this.props.onKeyframeUpdated(currentFrame)
     }
-    if (step + 1 < this.props.keyframes.length) {
-      this.setState({
-        animationStep: step + 1,
-      })
-      const nextFrame = this.props.keyframes[step + 1]
-      for (const element of nextFrame.elements) {
-        moveElement(
-          element.element.getTarget(),
-          element.x,
-          element.y,
-          nextFrame.seconds - currentFrame.seconds
-        )
+    if (this.state.playing) {
+      if (step + 1 < this.props.keyframes.length) {
+        this.setState({
+          animationStep: step + 1,
+        })
+        const nextFrame = this.props.keyframes[step + 1]
+        for (const element of nextFrame.elements) {
+          moveElement(
+            element.element.getTarget(),
+            element.x,
+            element.y,
+            nextFrame.seconds - currentFrame.seconds
+          )
+        }
+      }
+    } else {
+      for (const element of currentFrame.elements) {
+        moveElement(element.element.getTarget(), element.x, element.y, 1)
       }
     }
   }
@@ -87,13 +93,17 @@ class Timeline extends Component<Props, State> {
   }
 
   play = () => {
-    this.setState({
-      playing: true,
-    })
-    this.stepUpdated(this.state.step)
-    this.interval = setInterval(
-      () => this.setProgress(this.state.progress + 1),
-      100
+    this.setState(
+      {
+        playing: true,
+      },
+      () => {
+        this.stepUpdated(this.state.step)
+        this.interval = setInterval(
+          () => this.setProgress(this.state.progress + 1),
+          100
+        )
+      }
     )
   }
 
