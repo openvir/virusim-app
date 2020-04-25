@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Slider from 'rc-slider'
-import anime from 'animejs'
 
 import './Timeline.scss'
 import 'rc-slider/assets/index.css'
@@ -8,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faRedo } from '@fortawesome/free-solid-svg-icons'
 
 import { Keyframe } from '../models/Keyframe'
+import { moveElement } from '../utils/animations'
 
 type Props = {
   keyframes: Array<Keyframe>
@@ -29,7 +29,7 @@ class Timeline extends Component<Props, State> {
     playing: false,
   }
 
-  keyFramesToMarks() {
+  keyframesToMarks() {
     const marks: any = {}
     for (const keyframe of this.props.keyframes) {
       marks[keyframe.seconds.toString()] = keyframe.title
@@ -44,40 +44,40 @@ class Timeline extends Component<Props, State> {
     }
     if (step + 1 < this.props.keyframes.length) {
       const nextFrame = this.props.keyframes[step + 1]
-      if (nextFrame.elements) {
-        for (const element of nextFrame.elements) {
-          anime({
-            targets: element.element.getTarget(),
-            translateX: 0,
-            translateY: 0,
-            left: `${element.x}px`,
-            top: `${element.y}px`,
-            duration: (nextFrame.seconds - currentFrame.seconds) * 1000,
-            direction: 'forward',
-            easing: 'easeOutElastic(1, .8)',
-            loop: false,
-          })
-        }
+      for (const element of nextFrame.elements) {
+        moveElement(
+          element.element.getTarget(),
+          element.x,
+          element.y,
+          nextFrame.seconds - currentFrame.seconds
+        )
       }
     }
+  }
+
+  currentStep(progress: number): number {
+    for (let step = 0; step < this.props.keyframes.length; step++) {
+      if (
+        progress >= this.props.keyframes[step].seconds &&
+        (step === this.props.keyframes.length - 1 ||
+          progress < this.props.keyframes[step + 1].seconds)
+      ) {
+        return step
+      }
+    }
+    return 0
   }
 
   setProgress(progress: number) {
     let { step } = this.state
 
-    for (let i = 0; i < this.props.keyframes.length; i++) {
-      if (
-        progress >= this.props.keyframes[i].seconds &&
-        (i === this.props.keyframes.length - 1 ||
-          progress < this.props.keyframes[i + 1].seconds)
-      ) {
-        if (i !== step) {
-          step = i
-          this.stepUpdated(step)
-          console.log('Updated step.')
-        }
-      }
+    let currentStep = this.currentStep(progress)
+    if (currentStep !== step) {
+      step = currentStep
+      this.stepUpdated(step)
+      console.log(`Updated step to ${step}.`)
     }
+
     this.setState({ progress, step })
   }
 
@@ -85,7 +85,7 @@ class Timeline extends Component<Props, State> {
     this.setState({
       playing: true,
     })
-    this.stepUpdated(0)
+    this.stepUpdated(this.state.step)
     this.interval = setInterval(
       () => this.setProgress(this.state.progress + 1),
       100
@@ -93,22 +93,26 @@ class Timeline extends Component<Props, State> {
   }
 
   pause = () => {
+    clearInterval(this.interval)
     this.setState({
       playing: false,
     })
-    clearInterval(this.interval)
   }
 
   reset = () => {
     clearInterval(this.interval)
-    this.setState({
-      playing: false,
-    })
-    this.setProgress(0)
+    this.setState(
+      {
+        playing: false,
+      },
+      () => {
+        this.setProgress(0)
+      }
+    )
   }
 
-  onSliderChange = (e: any) => {
-    this.setProgress(e)
+  onSliderChange = (progress: number) => {
+    this.setProgress(progress)
   }
 
   render() {
@@ -130,7 +134,7 @@ class Timeline extends Component<Props, State> {
         <div className="slider-wrapper">
           <Slider
             value={this.state.progress}
-            marks={this.keyFramesToMarks()}
+            marks={this.keyframesToMarks()}
             onChange={this.onSliderChange}
           />
         </div>
