@@ -1,0 +1,98 @@
+.timeline {
+  background: white;
+  margin: $gutter-width;
+  border-radius: $border-radius;
+  box-shadow: 5px 5px 26px -17px rgba(80, 109, 125, 1);
+  padding: $gutter-width/2 $gutter-width/2 $gutter-width;
+
+  .controls {
+    position: absolute;
+    top: -60px;
+    left: 20px;
+    font-size: 30px;
+    border: 2px solid $lightbluegreen;
+    border-radius: $border-radius;
+    background: #c7ebedb4;
+  }
+
+  .slider-wrapper {
+    width: 100%;
+    padding: $gutter-width;
+    display: inline-block;
+
+    .rc-slider-rail, .rc-slider-track {
+      height: 2px;
+      border-radius: 0;
+    }
+
+    .rc-slider-rail {
+      background: $lightbluegreen;
+    }
+
+    .rc-slider-track {
+      background: $primaryColor;
+    }
+
+    .rc-slider-handle {
+      background: $red;
+      border: none;
+      width: 40px;
+      height: 15px;
+      border-radius: 10px;
+    }
+
+    .rc-slider-dot {
+      border: none;
+      border-radius: 0;;
+      background: $lightbluegreen;
+      width: 2px;
+      height: 25px;
+      bottom: -6px;
+      margin-left: 0;
+    }
+
+    .rc-slider-dot-active {
+      background: $primaryColor;
+    }
+
+    .rc-slider-mark-text {
+      color: $lightbluegreen;
+      font-size: 11px;
+      max-height: 26px;
+      max-width: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:hover{
+        overflow: visible;
+        background: #fff;
+      }
+    }
+
+    .rc-slider-mark-text-active {
+      color: $primaryColor;
+    }
+
+
+  }
+
+  button {
+    font-size: 20px;
+    color: $primaryColor;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0px;
+    padding: 20px;
+    cursor: pointer;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+}
