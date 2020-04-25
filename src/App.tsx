@@ -32,7 +32,7 @@ const keyframes: Array<Keyframe> = [
     elements: [
       {
         element: covid19,
-        x: 100,
+        x: 300,
         y: 100,
       },
     ],
