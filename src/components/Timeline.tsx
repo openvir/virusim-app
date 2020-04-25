@@ -93,10 +93,10 @@ class Timeline extends Component<Props, State> {
   }
 
   pause = () => {
+    clearInterval(this.interval)
     this.setState({
       playing: false,
     })
-    clearInterval(this.interval)
   }
 
   reset = () => {
