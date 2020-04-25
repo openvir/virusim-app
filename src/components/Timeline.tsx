@@ -11,7 +11,7 @@ import { Keyframe } from '../models/Keyframe'
 
 type Props = {
   keyframes: Array<Keyframe>
-  onDescriptionUpdated?: Function
+  onKeyframeUpdated?: Function
 }
 
 type State = {
@@ -39,8 +39,8 @@ class Timeline extends Component<Props, State> {
 
   stepUpdated(step: number) {
     const currentFrame = this.props.keyframes[step]
-    if (this.props.onDescriptionUpdated) {
-      this.props.onDescriptionUpdated(currentFrame.description)
+    if (this.props.onKeyframeUpdated) {
+      this.props.onKeyframeUpdated(currentFrame)
     }
     if (step + 1 < this.props.keyframes.length) {
       const nextFrame = this.props.keyframes[step + 1]

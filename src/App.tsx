@@ -56,19 +56,22 @@ type Props = {}
 
 type State = {
   description: string
+  title: string
 }
 
 class App extends Component<Props, State> {
   state: Readonly<State> = {
+    title: 'What is an Infection',
     description:
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore ' +
       'et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. ' +
       'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
   }
 
-  descriptionUpdated = (description: string) => {
+  keyframeUpdated = (keyframe: Keyframe) => {
     this.setState({
-      description,
+      title: keyframe.title,
+      description: keyframe.description,
     })
   }
 
@@ -85,7 +88,7 @@ class App extends Component<Props, State> {
         <div className="sidebar">
           <Logo />
           <div className="info-box">
-            <h4 className="subtitle">What is an Infection</h4>
+            <h4 className="subtitle">{this.state.title}</h4>
             <p>{this.state.description}</p>
           </div>
         </div>
@@ -95,7 +98,7 @@ class App extends Component<Props, State> {
         </div>
         <Timeline
           keyframes={keyframes}
-          onDescriptionUpdated={this.descriptionUpdated}
+          onKeyframeUpdated={this.keyframeUpdated}
         />
       </div>
     )
