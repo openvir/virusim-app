@@ -15,28 +15,15 @@ type Props = {
 
 type State = {
   progress: number
+  step: number
 }
 
 class Timeline extends Component<Props, State> {
-  animation = anime({
-    targets: '.play-pause-demo .el',
-    translateX: 270,
-    delay: (el, i) => {
-      return i * 100
-    },
-    direction: 'alternate',
-    loop: false,
-    autoplay: false,
-    easing: 'easeInOutSine',
-    update: (anim) => {
-      this.setState({
-        progress: anim.progress,
-      })
-    },
-  })
+  interval: any
 
   state: Readonly<State> = {
     progress: 0,
+    step: 0,
   }
 
   keyFramesToMarks() {
@@ -47,16 +34,51 @@ class Timeline extends Component<Props, State> {
     return marks
   }
 
+  play = () => {
+    this.interval = setInterval(
+      () => this.setState({ progress: this.state.progress + 1 }),
+      1000
+    )
+
+    anime({
+      targets: '.virusWrapper',
+      translateX: 0,
+      translateY: 0,
+      left: '100px',
+      top: '100px',
+      duration: 4000,
+      direction: 'forward',
+      easing: 'easeOutElastic(1, .8)',
+      loop: false,
+    })
+  }
+
+  pause = () => {
+    clearInterval(this.interval)
+  }
+
+  restart = () => {
+    clearInterval(this.interval)
+    this.setState(
+      {
+        progress: 0,
+      },
+      () => {
+        this.play()
+      }
+    )
+  }
+
   render() {
     return (
       <div className="timeline">
-        <button onClick={this.animation.play} style={{ marginLeft: '10px' }}>
+        <button onClick={this.play} style={{ marginLeft: '10px' }}>
           <FontAwesomeIcon icon={faPlay} />
         </button>
-        <button onClick={this.animation.pause}>
+        <button onClick={this.pause}>
           <FontAwesomeIcon icon={faPause} />
         </button>
-        <button onClick={this.animation.restart}>
+        <button onClick={this.restart}>
           <FontAwesomeIcon icon={faRedo} />
         </button>
         <div className="slider-wrapper">
