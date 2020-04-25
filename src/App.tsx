@@ -19,8 +19,8 @@ const keyframes: Array<Keyframe> = [
     elements: [
       {
         element: covid19,
-        x: 0,
-        y: 0,
+        x: 800,
+        y: 400,
       },
     ],
   },
@@ -31,8 +31,8 @@ const keyframes: Array<Keyframe> = [
     elements: [
       {
         element: covid19,
-        x: 300,
-        y: 100,
+        x: 460,
+        y: 260,
       },
     ],
   },
@@ -40,13 +40,7 @@ const keyframes: Array<Keyframe> = [
     seconds: 20,
     title: 'Key | Lock',
     description: '3',
-    elements: [
-      {
-        element: covid19,
-        x: 100,
-        y: 400,
-      },
-    ],
+    elements: [],
   },
   {
     seconds: 30,
