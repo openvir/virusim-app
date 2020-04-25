@@ -15,28 +15,15 @@ type Props = {
 
 type State = {
   progress: number
+  step: number
 }
 
 class Timeline extends Component<Props, State> {
-  animation = anime({
-    targets: '.play-pause-demo .el',
-    translateX: 270,
-    delay: (el, i) => {
-      return i * 100
-    },
-    direction: 'alternate',
-    loop: false,
-    autoplay: false,
-    easing: 'easeInOutSine',
-    update: (anim) => {
-      this.setState({
-        progress: anim.progress,
-      })
-    },
-  })
+  interval: any
 
   state: Readonly<State> = {
     progress: 0,
+    step: 0,
   }
 
   keyFramesToMarks() {
@@ -47,16 +34,77 @@ class Timeline extends Component<Props, State> {
     return marks
   }
 
+  stepUpdated(step: number) {
+    if (step + 1 < this.props.keyframes.length) {
+      const currentFrame = this.props.keyframes[step]
+      const nextFrame = this.props.keyframes[step + 1]
+      if (nextFrame.elements) {
+        for (const element of nextFrame.elements) {
+          anime({
+            targets: '.virusWrapper',
+            translateX: 0,
+            translateY: 0,
+            left: `${element.x}px`,
+            top: `${element.y}px`,
+            duration: (nextFrame.seconds - currentFrame.seconds) * 1000,
+            direction: 'forward',
+            easing: 'easeOutElastic(1, .8)',
+            loop: false,
+          })
+        }
+      }
+    }
+  }
+
+  updateProgress(progress: number) {
+    let { step } = this.state
+
+    if (step + 1 < this.props.keyframes.length) {
+      const nextFrame = this.props.keyframes[step + 1]
+      if (progress >= nextFrame.seconds) {
+        step += 1
+        this.stepUpdated(step)
+        console.log('Updated step.')
+      }
+    }
+    this.setState({ progress, step })
+  }
+
+  play = () => {
+    this.stepUpdated(0)
+    this.interval = setInterval(
+      () => this.updateProgress(this.state.progress + 1),
+      100
+    )
+  }
+
+  pause = () => {
+    clearInterval(this.interval)
+  }
+
+  restart = () => {
+    clearInterval(this.interval)
+    this.setState(
+      {
+        progress: 0,
+        step: 0,
+      },
+      () => {
+        this.play()
+      }
+    )
+  }
+
   render() {
     return (
       <div className="timeline">
-        <button onClick={this.animation.play} style={{ marginLeft: '10px' }}>
+        <button onClick={this.play} style={{ marginLeft: '10px' }}>
           <FontAwesomeIcon icon={faPlay} />
         </button>
-        <button onClick={this.animation.pause}>
+        <button onClick={this.pause}>
           <FontAwesomeIcon icon={faPause} />
         </button>
-        <button onClick={this.animation.restart}>
+        <button onClick={this.restart}>
           <FontAwesomeIcon icon={faRedo} />
         </button>
         <div className="slider-wrapper">
