@@ -7,6 +7,24 @@ import Timeline from './components/Timeline'
 
 const covid19 = new Virus('covid19');
 
+const keyframes = [
+  {
+    id: 1,
+    seconds: 0,
+    title: 'Initial',
+  },
+  {
+    id: 2,
+    seconds: 30,
+    title: 'Key + Lock',
+  },
+  {
+    id: 3,
+    seconds: 40,
+    title: 'Viral RNA Release',
+  },
+]
+
 function App() {
   return (
     <div className="App">
@@ -24,12 +42,12 @@ function App() {
           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
-      <Timeline />
       <div className="nav">
         <button onClick={covid19.move}>Move 1</button>
         <button onClick={covid19.moveTo} >Move 2</button>
         <button onClick={covid19.moveSpline} >Move Spline</button>
       </div>
+      <Timeline keyframes={keyframes} />
     </div>
   )
 }

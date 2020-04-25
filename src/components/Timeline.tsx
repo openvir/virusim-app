@@ -5,7 +5,11 @@ import anime from 'animejs'
 import './Timeline.scss'
 import 'rc-slider/assets/index.css'
 
-type Props = {}
+import { Keyframe } from '../models/Keyframe'
+
+type Props = {
+  keyframes: Array<Keyframe>
+}
 
 type State = {
   progress: number
@@ -19,7 +23,7 @@ class Timeline extends Component<Props, State> {
       return i * 100
     },
     direction: 'alternate',
-    loop: true,
+    loop: false,
     autoplay: false,
     easing: 'easeInOutSine',
     update: (anim) => {
@@ -30,7 +34,15 @@ class Timeline extends Component<Props, State> {
   })
 
   state: Readonly<State> = {
-    progress: 10,
+    progress: 0,
+  }
+
+  keyFramesToMarks() {
+    const marks: any = {}
+    for (const keyframe of this.props.keyframes) {
+      marks[keyframe.seconds.toString()] = keyframe.title
+    }
+    return marks
   }
 
   render() {
@@ -39,25 +51,11 @@ class Timeline extends Component<Props, State> {
         <Slider
           value={this.state.progress}
           style={{ width: '80%' }}
-          marks={{
-            '1': '1',
-            '50': '50',
-          }}
+          marks={this.keyFramesToMarks()}
         />
-        <button
-          onClick={() => {
-            this.animation.play()
-          }}
-        >
-          Play
-        </button>
-        <button
-          onClick={() => {
-            this.animation.pause()
-          }}
-        >
-          Pause
-        </button>
+        <button onClick={this.animation.play}>Play</button>
+        <button onClick={this.animation.pause}>Pause</button>
+        <button onClick={this.animation.restart}>Restart</button>
       </div>
     )
   }
