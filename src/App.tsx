@@ -13,16 +13,37 @@ const keyframes = [
     id: 1,
     seconds: 0,
     title: 'Initial',
+    elements: [
+      {
+        element: covid19,
+        x: 0,
+        y: 0,
+      },
+    ],
   },
   {
     id: 2,
-    seconds: 30,
+    seconds: 10,
     title: 'Key + Lock',
+    elements: [
+      {
+        element: covid19,
+        x: 100,
+        y: 100,
+      },
+    ],
   },
   {
     id: 3,
-    seconds: 40,
+    seconds: 20,
     title: 'Viral RNA Release',
+    elements: [
+      {
+        element: covid19,
+        x: 100,
+        y: 400,
+      },
+    ],
   },
 ]
 
