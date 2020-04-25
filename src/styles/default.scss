@@ -70,4 +70,17 @@ body {
     padding: $gutter-width;
     box-shadow: 5px 5px 26px -17px rgba(80, 109, 125, 1);
   }
+
+  .zoom {
+      position: absolute;
+    font-size: 20px;
+    left: 20px;
+    bottom: 120px;
+
+      span {
+          cursor: pointer;
+        display: block;
+        margin-bottom: 20px;
+        }
+  }
 }
