@@ -18,8 +18,11 @@ function App() {
         <button onClick={covid19.moveSpline} >Move Spline</button>
       </div>
       <div className="stage">
-        {covid19.render()}
-        <Cell />
+        <div className="scene">
+          {covid19.render()}
+          <Virus />
+          <Cell />
+        </div>
       </div>
       <Timeline />
     </div>
