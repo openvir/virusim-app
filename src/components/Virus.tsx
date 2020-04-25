@@ -77,9 +77,9 @@ class Virus extends Component {
     render() {
         return (
             <div className="Virus">
-                <div className="virusWrapper" style={{ width: '100px', height: '100px' }}>
-                <svg width="362px" height="362px" className="virus" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                        xmlnsXlink="http://www.w3.org/1999/xlink" >
+                <div className="virusWrapper" style={{ width: '30%', height: '30%' }}>
+                <svg width="100%" height="100%" className="virus" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 362 362">
                         <title>virus</title>
 <circle fill="#F08271" cx="182.199" cy="181.609" r="122.759"/>
 <circle fill="#EDAAA4" cx="182.199" cy="181.608" r="108.92"/>
