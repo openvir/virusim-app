@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import anime from 'animejs'
 
-class Virus extends Component {
+import { VisualElement } from '../models/Keyframe'
+
+class Virus extends Component implements VisualElement {
+
+	getTarget(): string {
+		return '.virusWrapper'
+	}
 
 	idle() {
 		anime({

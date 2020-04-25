@@ -1,5 +1,9 @@
+export interface VisualElement {
+  getTarget(): string
+}
+
 type Element = {
-  element: any
+  element: VisualElement
   x: number
   y: number
 }

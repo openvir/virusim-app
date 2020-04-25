@@ -41,7 +41,7 @@ class Timeline extends Component<Props, State> {
       if (nextFrame.elements) {
         for (const element of nextFrame.elements) {
           anime({
-            targets: '.virusWrapper',
+            targets: element.element.getTarget(),
             translateX: 0,
             translateY: 0,
             left: `${element.x}px`,
