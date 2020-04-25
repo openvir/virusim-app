@@ -30,7 +30,7 @@ class Timeline extends Component<Props, State> {
   })
 
   state: Readonly<State> = {
-    progress: 10,
+    progress: 0,
   }
 
   render() {
