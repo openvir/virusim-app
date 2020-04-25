@@ -8,8 +8,10 @@ import Timeline from './components/Timeline'
 import Zoom from './components/Zoom'
 
 import { Keyframe } from './models/Keyframe'
+import Rna from './components/Rna'
 
 const covid19 = new Virus('covid19')
+const rna = new Rna('')
 
 const keyframes: Array<Keyframe> = [
   {
@@ -22,6 +24,11 @@ const keyframes: Array<Keyframe> = [
         x: 800,
         y: 400,
       },
+      {
+        element: rna,
+        x: 800,
+        y: 400,
+      },
     ],
   },
   {
@@ -31,6 +38,11 @@ const keyframes: Array<Keyframe> = [
     elements: [
       {
         element: covid19,
+        x: 460,
+        y: 260,
+      },
+      {
+        element: rna,
         x: 460,
         y: 260,
       },
@@ -58,7 +70,13 @@ const keyframes: Array<Keyframe> = [
     seconds: 45,
     title: 'Viral RNA Release',
     description: '6',
-    elements: [],
+    elements: [
+      {
+        element: rna,
+        x: 200,
+        y: 200,
+      },
+    ],
   },
   {
     seconds: 50,
@@ -139,6 +157,8 @@ class App extends Component<Props, State> {
         <div className="stage">
           <div className="scene">
             {covid19.render()}
+            {rna.render()}
+            <Rna />
             <Virus />
             <Cell />
           </div>

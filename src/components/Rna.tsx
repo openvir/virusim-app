@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 
-class Rna extends Component {
+import { VisualElement } from '../models/Keyframe'
+import './Rna.scss'
+
+class Rna extends Component implements VisualElement {
+  getTarget() {
+    return '.rnaWrapper'
+  }
+
   render() {
     return (
       <div className="Virus">
-        <div className="virusWrapper" style={{ width: '30%', height: '30%' }}>
+        <div className="rnaWrapper" style={{ width: '30%', height: '30%' }}>
           <svg
             width="100%"
             height="100%"
