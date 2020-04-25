@@ -174,7 +174,6 @@ class Virus extends Component implements VisualElement {
 	c-2.613-1.312-3.669-4.494-2.356-7.108l6.83-13.604c1.312-2.613,4.494-3.669,7.108-2.356l0,0
 	C140.286,271.678,141.341,274.86,140.03,277.473z"
             />
-            <Rna />
             <line
               fill="none"
               stroke="#516E7D"
@@ -668,6 +667,7 @@ class Virus extends Component implements VisualElement {
             </g>
           </svg>
         </div>
+        <Rna />
       </div>
     )
   }
