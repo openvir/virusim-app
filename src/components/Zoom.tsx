@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import anime from 'animejs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearchPlus, faSearchMinus, faExpand } from '@fortawesome/free-solid-svg-icons'
+import { faSearchPlus, faSearchMinus, faCompressAlt } from '@fortawesome/free-solid-svg-icons'
 
 const sceneClass = '.scene';
 
@@ -12,7 +12,7 @@ class Zoom extends Component {
             <div className="zoom">
                 <span onClick={this.zoomIn}><FontAwesomeIcon icon={faSearchPlus} /></span>
                 <span onClick={this.zoomOut}><FontAwesomeIcon icon={faSearchMinus} /></span>
-                <span onClick={this.zoomReset}><FontAwesomeIcon icon={faExpand} /></span>
+                <span onClick={this.zoomReset}><FontAwesomeIcon icon={faCompressAlt} /></span>
             </div>
         )
     }
