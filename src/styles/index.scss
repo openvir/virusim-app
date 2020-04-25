@@ -1,23 +1,21 @@
 @import 'normalize.scss';
 @import 'variables.scss';
+@import 'typography.scss';
 
 // app styles
 
-// typography
-
-
 // basic styles
-html, body {
+html,
+body {
   background: $lightblue;
 }
 
 .App {
   background: $lightblue;
-  font-family: Arial, Helvetica, sans-serif;
   color: $primaryColor;
-  
+
   h1 {
-    margin-bottom: 20px;
+    margin-bottom: $gutter-width;
   }
 
   p {
@@ -26,7 +24,7 @@ html, body {
   }
 
   .logo {
-    text-align: right;
+    margin-bottom: $gutter-width;
   }
 
   .subtitle {
@@ -34,7 +32,7 @@ html, body {
     margin-bottom: 10px;
   }
 
-// stage, a fake canvas
+  // stage, a fake canvas
   .stage {
     position: relative;
     width: 100%;
@@ -42,7 +40,7 @@ html, body {
     min-height: 600px;
     overflow: hidden;
     //border: 1px solid $white; // just for debug
-  
+
     .scene {
       transform: scale(1);
     }
@@ -52,14 +50,12 @@ html, body {
       width: 100%;
       position: absolute;
     }
-
   }
 
   .virusWrapper {
     position: absolute;
     z-index: 100;
   }
-
 
   .sidebar {
     width: 25%;
@@ -72,8 +68,6 @@ html, body {
   .info-box {
     background: #fff;
     border-radius: 10px;
-    padding: $gutter-width
+    padding: $gutter-width;
   }
-
-
 }

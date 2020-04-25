@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles/index.scss'
 
+import Logo from './components/Logo'
 import Virus from './components/Virus'
 import Cell from './components/Cell'
 import Timeline from './components/Timeline'
@@ -36,7 +37,7 @@ function App() {
         </div>
       </div>
       <div className="sidebar">
-      <h1 className="logo">VIRUSIM</h1>
+        <Logo />
         <div className="info-box">
           <h4 className="subtitle">What is an Infection</h4>
           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
@@ -45,7 +46,6 @@ function App() {
       <div className="nav">
         <button onClick={covid19.move}>Move 1</button>
         <button onClick={covid19.moveTo} >Move 2</button>
-        <button onClick={covid19.moveSpline} >Move Spline</button>
       </div>
       <Timeline keyframes={keyframes} />
     </div>

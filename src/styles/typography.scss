@@ -1,0 +1,19 @@
+// fonts
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: normal;
+  src: url(./../fonts/Barlow/Barlow-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-weight: bold;
+  src: url(./../fonts/Barlow/Barlow-Bold.ttf) format('truetype');
+}
+
+// typography
+
+.App {
+  font-family: 'Barlow', Arial, Helvetica, sans-serif;
+}
