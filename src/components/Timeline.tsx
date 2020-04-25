@@ -48,11 +48,9 @@ class Timeline extends Component<Props, State> {
   render() {
     return (
       <div className="timeline">
-        <Slider
-          value={this.state.progress}
-          style={{ width: '80%' }}
-          marks={this.keyFramesToMarks()}
-        />
+        <div className="slider-wrapper">
+          <Slider value={this.state.progress} marks={this.keyFramesToMarks()} />
+        </div>
         <button onClick={this.animation.play}>Play</button>
         <button onClick={this.animation.pause}>Pause</button>
         <button onClick={this.animation.restart}>Restart</button>
