@@ -74,7 +74,7 @@ class Timeline extends Component<Props, State> {
         if (i !== step) {
           step = i
           this.stepUpdated(step)
-          console.log('Updated step.')
+          console.log(`Updated step to ${step}.`)
         }
       }
     }
