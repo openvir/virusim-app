@@ -65,12 +65,17 @@ class Timeline extends Component<Props, State> {
   setProgress(progress: number) {
     let { step } = this.state
 
-    if (step + 1 < this.props.keyframes.length) {
-      const nextFrame = this.props.keyframes[step + 1]
-      if (progress >= nextFrame.seconds) {
-        step += 1
-        this.stepUpdated(step)
-        console.log('Updated step.')
+    for (let i = 0; i < this.props.keyframes.length; i++) {
+      if (
+        progress >= this.props.keyframes[i].seconds &&
+        (i === this.props.keyframes.length - 1 ||
+          progress < this.props.keyframes[i + 1].seconds)
+      ) {
+        if (i !== step) {
+          step = i
+          this.stepUpdated(step)
+          console.log('Updated step.')
+        }
       }
     }
     this.setState({ progress, step })
@@ -97,9 +102,9 @@ class Timeline extends Component<Props, State> {
   reset = () => {
     clearInterval(this.interval)
     this.setState({
-      progress: 0,
-      step: 0,
+      playing: false,
     })
+    this.setProgress(0)
   }
 
   onSliderChange = (e: any) => {
