@@ -1,7 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import anime from 'animejs'
+import { ReactComponent as VirusSVG } from '../svg/viruszelle.svg'
 
 class Virus extends Component {
+  idle() {
+    anime({
+      targets: '.virus',
+      duration: 10000,
+      rotate: '360',
+      direction: 'forward',
+      loop: true,
+      easing: 'linear',
+      scale: [0.8, 1, 0.8, 1, 0.8, 1, 0.8, 1],
+    })
+  }
 
 	idle() {
 		anime({
