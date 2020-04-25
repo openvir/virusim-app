@@ -117,6 +117,7 @@ class Timeline extends Component<Props, State> {
   }
 
   onSliderChange = (progress: number) => {
+    this.pause()
     this.setProgress(progress)
   }
 
