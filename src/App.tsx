@@ -23,7 +23,7 @@ const keyframes = [
   },
   {
     id: 2,
-    seconds: 30,
+    seconds: 10,
     title: 'Key + Lock',
     elements: [
       {
@@ -35,8 +35,15 @@ const keyframes = [
   },
   {
     id: 3,
-    seconds: 40,
+    seconds: 20,
     title: 'Viral RNA Release',
+    elements: [
+      {
+        element: covid19,
+        x: 100,
+        y: 400,
+      },
+    ],
   },
 ]
 

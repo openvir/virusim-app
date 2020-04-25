@@ -34,6 +34,28 @@ class Timeline extends Component<Props, State> {
     return marks
   }
 
+  stepUpdated(step: number) {
+    if (step + 1 < this.props.keyframes.length) {
+      const currentFrame = this.props.keyframes[step]
+      const nextFrame = this.props.keyframes[step + 1]
+      if (nextFrame.elements) {
+        for (const element of nextFrame.elements) {
+          anime({
+            targets: '.virusWrapper',
+            translateX: 0,
+            translateY: 0,
+            left: `${element.x}px`,
+            top: `${element.y}px`,
+            duration: (nextFrame.seconds - currentFrame.seconds) * 1000,
+            direction: 'forward',
+            easing: 'easeOutElastic(1, .8)',
+            loop: false,
+          })
+        }
+      }
+    }
+  }
+
   updateProgress(progress: number) {
     let { step } = this.state
 
@@ -41,6 +63,7 @@ class Timeline extends Component<Props, State> {
       const nextFrame = this.props.keyframes[step + 1]
       if (progress >= nextFrame.seconds) {
         step += 1
+        this.stepUpdated(step)
         console.log('Updated step.')
       }
     }
@@ -48,22 +71,11 @@ class Timeline extends Component<Props, State> {
   }
 
   play = () => {
+    this.stepUpdated(0)
     this.interval = setInterval(
       () => this.updateProgress(this.state.progress + 1),
       100
     )
-
-    anime({
-      targets: '.virusWrapper',
-      translateX: 0,
-      translateY: 0,
-      left: '100px',
-      top: '100px',
-      duration: 4000,
-      direction: 'forward',
-      easing: 'easeOutElastic(1, .8)',
-      loop: false,
-    })
   }
 
   pause = () => {
