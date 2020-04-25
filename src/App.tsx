@@ -6,9 +6,11 @@ import Virus from './components/Virus'
 import Cell from './components/Cell'
 import Timeline from './components/Timeline'
 
+import { Keyframe } from './models/Keyframe'
+
 const covid19 = new Virus('covid19')
 
-const keyframes = [
+const keyframes: Array<Keyframe> = [
   {
     id: 1,
     seconds: 0,
