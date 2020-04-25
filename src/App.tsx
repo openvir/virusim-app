@@ -13,7 +13,7 @@ const keyframes = [
     id: 1,
     seconds: 0,
     title: 'Initial',
-    description: '',
+    description: '1',
     elements: [
       {
         element: covid19,
@@ -26,7 +26,7 @@ const keyframes = [
     id: 2,
     seconds: 10,
     title: 'Key + Lock',
-    description: '',
+    description: '2',
     elements: [
       {
         element: covid19,
@@ -39,7 +39,7 @@ const keyframes = [
     id: 3,
     seconds: 20,
     title: 'Viral RNA Release',
-    description: '',
+    description: '3',
     elements: [
       {
         element: covid19,
@@ -64,6 +64,12 @@ class App extends Component<Props, State> {
       'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
   }
 
+  descriptionUpdated = (description: string) => {
+    this.setState({
+      description,
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -85,7 +91,10 @@ class App extends Component<Props, State> {
           <button onClick={covid19.move}>Move 1</button>
           <button onClick={covid19.moveTo}>Move 2</button>
         </div>
-        <Timeline keyframes={keyframes} />
+        <Timeline
+          keyframes={keyframes}
+          onDescriptionUpdated={this.descriptionUpdated}
+        />
       </div>
     )
   }
