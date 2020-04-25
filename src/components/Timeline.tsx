@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Slider from 'rc-slider'
-import anime from 'animejs'
 
 import './Timeline.scss'
 import 'rc-slider/assets/index.css'
@@ -8,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faRedo } from '@fortawesome/free-solid-svg-icons'
 
 import { Keyframe } from '../models/Keyframe'
+import { moveElement } from '../utils/animations'
 
 type Props = {
   keyframes: Array<Keyframe>
@@ -45,17 +45,12 @@ class Timeline extends Component<Props, State> {
     if (step + 1 < this.props.keyframes.length) {
       const nextFrame = this.props.keyframes[step + 1]
       for (const element of nextFrame.elements) {
-        anime({
-          targets: element.element.getTarget(),
-          translateX: 0,
-          translateY: 0,
-          left: `${element.x}px`,
-          top: `${element.y}px`,
-          duration: (nextFrame.seconds - currentFrame.seconds) * 1000,
-          direction: 'forward',
-          easing: 'easeOutElastic(1, .8)',
-          loop: false,
-        })
+        moveElement(
+          element.element.getTarget(),
+          element.x,
+          element.y,
+          nextFrame.seconds - currentFrame.seconds
+        )
       }
     }
   }
