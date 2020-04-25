@@ -12,9 +12,8 @@ const covid19 = new Virus('covid19')
 
 const keyframes: Array<Keyframe> = [
   {
-    id: 1,
     seconds: 0,
-    title: 'Initial',
+    title: 'Virus',
     description: '1',
     elements: [
       {
@@ -25,9 +24,8 @@ const keyframes: Array<Keyframe> = [
     ],
   },
   {
-    id: 2,
     seconds: 10,
-    title: 'Key + Lock',
+    title: 'Virus + Host Cell',
     description: '2',
     elements: [
       {
@@ -38,9 +36,8 @@ const keyframes: Array<Keyframe> = [
     ],
   },
   {
-    id: 3,
     seconds: 20,
-    title: 'Viral RNA Release',
+    title: 'Key | Lock',
     description: '3',
     elements: [
       {
@@ -49,6 +46,72 @@ const keyframes: Array<Keyframe> = [
         y: 400,
       },
     ],
+  },
+  {
+    seconds: 30,
+    title: 'Door Opens',
+    description: '3',
+    elements: [],
+  },
+  {
+    seconds: 40,
+    title: 'Entry - Yeah',
+    description: '3',
+    elements: [],
+  },
+  {
+    seconds: 45,
+    title: 'Viral RNA Release',
+    description: '3',
+    elements: [],
+  },
+  {
+    seconds: 50,
+    title: 'Production of Helper = Viral Polymerase',
+    description: '3',
+    elements: [],
+  },
+  {
+    seconds: 60,
+    title: 'RNA Replication',
+    description: '3',
+    elements: [],
+  },
+  {
+    seconds: 70,
+    title: 'Transcription + Translation',
+    description: '3',
+    elements: [],
+  },
+  {
+    seconds: 80,
+    title: 'Viral RNA Packaging in Cytoplasm',
+    description: '3',
+    elements: [],
+  },
+  {
+    seconds: 85,
+    title: 'Structural Protein Synthesis',
+    description: '3',
+    elements: [],
+  },
+  {
+    seconds: 90,
+    title: 'Budding + Assembly',
+    description: '3',
+    elements: [],
+  },
+  {
+    seconds: 95,
+    title: 'Release',
+    description: '3',
+    elements: [],
+  },
+  {
+    seconds: 100,
+    title: 'Invasion',
+    description: '3',
+    elements: [],
   },
 ]
 
