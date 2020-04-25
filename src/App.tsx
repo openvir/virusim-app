@@ -3,6 +3,7 @@ import './index.scss'
 
 import Virus from './components/Virus'
 import Cell from './components/Cell'
+import Timeline from './components/Timeline'
 
 const covid19 = new Virus('covid19');
 
@@ -20,6 +21,7 @@ function App() {
         {covid19.render()}
         <Cell />
       </div>
+      <Timeline />
     </div>
   )
 }
