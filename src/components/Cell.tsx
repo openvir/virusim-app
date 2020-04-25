@@ -16,12 +16,12 @@ class Cell extends Component {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink">
             {/*cell membrane*/}
-            <circle fill="#C7DD94" stroke="#98C557" stroke-width={CELL_MEMBRANE_WIDTH} stroke-miterlimit="10"
+            <circle fill="#C7DD94" stroke="#98C557" strokeWidth={CELL_MEMBRANE_WIDTH} strokeMiterlimit="10"
                     cx={CELL_RADIUS}
                     cy={CELL_RADIUS}
                     r={CELL_RADIUS}/>
             {/*nucleus*/}
-            <circle fill="#96C256" stroke="#81B430" stroke-width="20" stroke-miterlimit="10"
+            <circle fill="#96C256" stroke="#81B430" strokeWidth="20" strokeMiterlimit="10"
                     cx={CELL_RADIUS}
                     cy={CELL_RADIUS}
                     r={NUCLEUS_RADIUS}/>
