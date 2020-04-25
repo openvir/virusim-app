@@ -46,7 +46,6 @@ function App() {
       <div className="nav">
         <button onClick={covid19.move}>Move 1</button>
         <button onClick={covid19.moveTo} >Move 2</button>
-        <button onClick={covid19.moveSpline} >Move Spline</button>
       </div>
       <Timeline keyframes={keyframes} />
     </div>
