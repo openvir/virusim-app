@@ -8,7 +8,7 @@ class Cell extends Component {
 
   render() {
     return (
-      <div className="cell" style={{ width: '500px', height: '500px', left: '500px' }}>
+      <div className="cell" style={{ width: '50%', height: '50%', left: '-10%', top: '-15%' }}>
         <svg
           viewBox={`${-CELL_MEMBRANE_WIDTH} ${-CELL_MEMBRANE_WIDTH} ${CELL_RADIUS * 2 + CELL_MEMBRANE_WIDTH * 2} ${CELL_RADIUS * 2 + CELL_MEMBRANE_WIDTH * 2}`}
           version="1.1"
