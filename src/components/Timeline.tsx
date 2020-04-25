@@ -34,9 +34,13 @@ class Timeline extends Component<Props, State> {
     return marks
   }
 
+  updateProgress(progress: number) {
+    this.setState({ progress: progress })
+  }
+
   play = () => {
     this.interval = setInterval(
-      () => this.setState({ progress: this.state.progress + 1 }),
+      () => this.updateProgress(this.state.progress + 1),
       1000
     )
 
