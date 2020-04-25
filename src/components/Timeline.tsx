@@ -55,22 +55,29 @@ class Timeline extends Component<Props, State> {
     }
   }
 
-  setProgress(progress: number) {
-    let { step } = this.state
-
+  currentStep(progress: number): number {
     for (let i = 0; i < this.props.keyframes.length; i++) {
       if (
         progress >= this.props.keyframes[i].seconds &&
         (i === this.props.keyframes.length - 1 ||
           progress < this.props.keyframes[i + 1].seconds)
       ) {
-        if (i !== step) {
-          step = i
-          this.stepUpdated(step)
-          console.log(`Updated step to ${step}.`)
-        }
+        return i
       }
     }
+    return 0
+  }
+
+  setProgress(progress: number) {
+    let { step } = this.state
+
+    let currentStep = this.currentStep(progress)
+    if (currentStep !== step) {
+      step = currentStep
+      this.stepUpdated(step)
+      console.log(`Updated step to ${step}.`)
+    }
+
     this.setState({ progress, step })
   }
 
