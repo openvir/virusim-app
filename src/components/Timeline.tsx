@@ -16,6 +16,7 @@ type Props = {
 type State = {
   progress: number
   step: number
+  playing: boolean
 }
 
 class Timeline extends Component<Props, State> {
@@ -24,6 +25,7 @@ class Timeline extends Component<Props, State> {
   state: Readonly<State> = {
     progress: 0,
     step: 0,
+    playing: false,
   }
 
   keyFramesToMarks() {
@@ -71,6 +73,9 @@ class Timeline extends Component<Props, State> {
   }
 
   play = () => {
+    this.setState({
+      playing: true,
+    })
     this.stepUpdated(0)
     this.interval = setInterval(
       () => this.updateProgress(this.state.progress + 1),
@@ -79,6 +84,9 @@ class Timeline extends Component<Props, State> {
   }
 
   pause = () => {
+    this.setState({
+      playing: false,
+    })
     clearInterval(this.interval)
   }
 
@@ -98,10 +106,14 @@ class Timeline extends Component<Props, State> {
   render() {
     return (
       <div className="timeline">
-        <button onClick={this.play} style={{ marginLeft: '10px' }}>
+        <button
+          onClick={this.play}
+          style={{ marginLeft: '10px' }}
+          disabled={this.state.playing}
+        >
           <FontAwesomeIcon icon={faPlay} />
         </button>
-        <button onClick={this.pause}>
+        <button onClick={this.pause} disabled={!this.state.playing}>
           <FontAwesomeIcon icon={faPause} />
         </button>
         <button onClick={this.restart}>
