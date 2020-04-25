@@ -7,6 +7,24 @@ import Timeline from './components/Timeline'
 
 const covid19 = new Virus('covid19');
 
+const keyframes = [
+  {
+    id: 1,
+    seconds: 0,
+    title: 'Initial',
+  },
+  {
+    id: 2,
+    seconds: 30,
+    title: 'Key + Lock',
+  },
+  {
+    id: 3,
+    seconds: 40,
+    title: 'Viral RNA Release',
+  },
+]
+
 function App() {
   return (
     <div className="App">
@@ -24,7 +42,7 @@ function App() {
           <Cell />
         </div>
       </div>
-      <Timeline />
+      <Timeline keyframes={keyframes} />
     </div>
   )
 }
