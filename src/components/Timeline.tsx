@@ -100,8 +100,8 @@ class Timeline extends Component<Props, State> {
     this.setProgress(0)
   }
 
-  onSliderChange = (e: any) => {
-    this.setProgress(e)
+  onSliderChange = (progress: number) => {
+    this.setProgress(progress)
   }
 
   render() {
