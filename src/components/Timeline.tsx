@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Slider from 'rc-slider'
 
-import './Timeline.scss'
 import 'rc-slider/assets/index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faRedo } from '@fortawesome/free-solid-svg-icons'
@@ -155,19 +154,22 @@ class Timeline extends Component<Props, State> {
   render() {
     return (
       <div className="timeline">
-        <button
-          onClick={this.play}
-          style={{ marginLeft: '10px' }}
-          disabled={this.state.playing}
-        >
-          <FontAwesomeIcon icon={faPlay} />
-        </button>
-        <button onClick={this.pause} disabled={!this.state.playing}>
-          <FontAwesomeIcon icon={faPause} />
-        </button>
-        <button onClick={this.reset}>
-          <FontAwesomeIcon icon={faRedo} />
-        </button>
+        <div className="controls">
+            <button
+            onClick={this.play}
+            style={{ marginLeft: '10px' }}
+            disabled={this.state.playing}
+          >
+            <FontAwesomeIcon icon={faPlay} />
+          </button>
+          <button onClick={this.pause} disabled={!this.state.playing}>
+            <FontAwesomeIcon icon={faPause} />
+          </button>
+          <button onClick={this.reset}>
+            <FontAwesomeIcon icon={faRedo} />
+          </button>
+        </div>
+        <h6 className="subtitle">Timeline</h6>
         <div className="slider-wrapper">
           <Slider
             value={this.state.progress}
