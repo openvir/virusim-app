@@ -5,49 +5,39 @@ import anime from 'animejs'
 import './Timeline.scss'
 import 'rc-slider/assets/index.css'
 
-const animation = anime({
-  targets: '.play-pause-demo .el',
-  translateX: 270,
-  delay: function (el, i) {
-    console.log('huhu')
-    console.log(i)
-    return i * 100
-  },
-  direction: 'alternate',
-  loop: true,
-  autoplay: false,
-  easing: 'easeInOutSine',
-  update: function (anim) {
-    console.log(anim.progress)
-  },
-})
+type Props = {}
 
-const keyframes = [
-  {
-    id: 1,
-    name: 'Init',
-    description: '...',
-    time: 0,
-  },
-  {
-    id: 2,
-    name: 'Cell Docking',
-    description: '...',
-    time: 100,
-  },
-  {
-    id: 2,
-    name: 'Cell Entry',
-    description: '...',
-    time: 200,
-  },
-]
+type State = {
+  progress: number
+}
 
-class Timeline extends Component {
+class Timeline extends Component<Props, State> {
+  animation = anime({
+    targets: '.play-pause-demo .el',
+    translateX: 270,
+    delay: (el, i) => {
+      return i * 100
+    },
+    direction: 'alternate',
+    loop: true,
+    autoplay: false,
+    easing: 'easeInOutSine',
+    update: (anim) => {
+      this.setState({
+        progress: anim.progress,
+      })
+    },
+  })
+
+  state: Readonly<State> = {
+    progress: 10,
+  }
+
   render() {
     return (
       <div className="timeline">
         <Slider
+          value={this.state.progress}
           style={{ width: '80%' }}
           marks={{
             '1': '1',
@@ -56,16 +46,14 @@ class Timeline extends Component {
         />
         <button
           onClick={() => {
-            console.log('play')
-            animation.play()
+            this.animation.play()
           }}
         >
           Play
         </button>
         <button
           onClick={() => {
-            console.log('pause')
-            animation.pause()
+            this.animation.pause()
           }}
         >
           Pause
