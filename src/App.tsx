@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './styles/index.scss'
 
 import Logo from './components/Logo'
@@ -6,7 +6,7 @@ import Virus from './components/Virus'
 import Cell from './components/Cell'
 import Timeline from './components/Timeline'
 
-const covid19 = new Virus('covid19');
+const covid19 = new Virus('covid19')
 
 const keyframes = [
   {
@@ -50,30 +50,34 @@ const keyframes = [
   },
 ]
 
-function App() {
-  return (
-    <div className="App">
-      <div className="stage">
-        <div className="scene">
-          {covid19.render()}
-          <Virus />
-          <Cell />
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="stage">
+          <div className="scene">
+            {covid19.render()}
+            <Virus />
+            <Cell />
+          </div>
         </div>
-      </div>
-      <div className="sidebar">
-        <Logo />
-        <div className="info-box">
-          <h4 className="subtitle">What is an Infection</h4>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <div className="sidebar">
+          <Logo />
+          <div className="info-box">
+            <h4 className="subtitle">What is an Infection</h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          </div>
         </div>
+        <div className="nav">
+          <button onClick={covid19.move}>Move 1</button>
+          <button onClick={covid19.moveTo}>Move 2</button>
+        </div>
+        <Timeline keyframes={keyframes} />
       </div>
-      <div className="nav">
-        <button onClick={covid19.move}>Move 1</button>
-        <button onClick={covid19.moveTo} >Move 2</button>
-      </div>
-      <Timeline keyframes={keyframes} />
-    </div>
-  )
+    )
+  }
 }
 
 export default App
