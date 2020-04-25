@@ -101,10 +101,14 @@ class Timeline extends Component<Props, State> {
 
   reset = () => {
     clearInterval(this.interval)
-    this.setState({
-      playing: false,
-    })
-    this.setProgress(0)
+    this.setState(
+      {
+        playing: false,
+      },
+      () => {
+        this.setProgress(0)
+      }
+    )
   }
 
   onSliderChange = (progress: number) => {
