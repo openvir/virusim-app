@@ -31,6 +31,10 @@ class Timeline extends Component<Props, State> {
     playing: false,
   }
 
+  componentDidMount(): void {
+    this.stepUpdated(0)
+  }
+
   keyframesToMarks() {
     const marks: any = {}
     for (const keyframe of this.props.keyframes) {
