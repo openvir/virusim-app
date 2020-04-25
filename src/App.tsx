@@ -50,7 +50,20 @@ const keyframes = [
   },
 ]
 
-class App extends Component {
+type Props = {}
+
+type State = {
+  description: string
+}
+
+class App extends Component<Props, State> {
+  state: Readonly<State> = {
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore ' +
+      'et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. ' +
+      'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+  }
+
   render() {
     return (
       <div className="App">
@@ -65,9 +78,7 @@ class App extends Component {
           <Logo />
           <div className="info-box">
             <h4 className="subtitle">What is an Infection</h4>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>{this.state.description}</p>
           </div>
         </div>
         <div className="nav">
