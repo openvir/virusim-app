@@ -3,7 +3,6 @@ import anime from 'animejs'
 
 class Virus extends Component {
 
-
     idle() {
         anime({
             targets: '.virus',
@@ -77,12 +76,6 @@ class Virus extends Component {
     render() {
         return (
             <div className="Virus">
-                <h1>Virus</h1>
-                <button onClick={this.move}>Move 1</button>
-                <button onClick={this.moveTo} >Move 2</button>
-                <button onClick={this.moveSpline} >Move Spline</button>
-
-
                 <div className="virusWrapper" style={{ width: '100px', height: '100px' }}>
                     <svg width="100px" height="100px" className="virus" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlnsXlink="http://www.w3.org/1999/xlink" >
@@ -145,9 +138,9 @@ class Virus extends Component {
                 <div className="pathTest">
                     <svg viewBox="0 0 500 500" className="pathTest" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlnsXlink="http://www.w3.org/1999/xlink" >
-                        <path fill="none" stroke="#FCF3C4" stroke-width="2" stroke-miterlimit="10" d="M277.643,21.446c0,0-42.411,21.875-12.946,48.661
+                        <path fill="none" stroke="#FCF3C4" strokeWidth="2" strokeMiterlimit="10" d="M277.643,21.446c0,0-42.411,21.875-12.946,48.661
 	c29.464,26.786,43.75,43.303,21.875,64.732s-29.911,41.965-20.981,51.786c8.928,9.821,93.749,12.053,109.374-24.107"/>
-                        <circle fill="#99CEBB" stroke="#556A86" stroke-width="5" stroke-miterlimit="10" cx="412.268" cy="98.357" r="58.928" />
+                        <circle fill="#99CEBB" stroke="#556A86" strokeWidth="5" strokeMiterlimit="10" cx="412.268" cy="98.357" r="58.928" />
                     </svg>
 
 
