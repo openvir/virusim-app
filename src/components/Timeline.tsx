@@ -29,7 +29,7 @@ class Timeline extends Component<Props, State> {
     playing: false,
   }
 
-  keyFramesToMarks() {
+  keyframesToMarks() {
     const marks: any = {}
     for (const keyframe of this.props.keyframes) {
       marks[keyframe.seconds.toString()] = keyframe.title
@@ -123,7 +123,7 @@ class Timeline extends Component<Props, State> {
         <div className="slider-wrapper">
           <Slider
             value={this.state.progress}
-            marks={this.keyFramesToMarks()}
+            marks={this.keyframesToMarks()}
             onChange={this.onSliderChange}
           />
         </div>
