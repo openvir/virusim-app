@@ -94,17 +94,12 @@ class Timeline extends Component<Props, State> {
     clearInterval(this.interval)
   }
 
-  restart = () => {
+  reset = () => {
     clearInterval(this.interval)
-    this.setState(
-      {
-        progress: 0,
-        step: 0,
-      },
-      () => {
-        this.play()
-      }
-    )
+    this.setState({
+      progress: 0,
+      step: 0,
+    })
   }
 
   onSliderChange = (e: any) => {
@@ -124,7 +119,7 @@ class Timeline extends Component<Props, State> {
         <button onClick={this.pause} disabled={!this.state.playing}>
           <FontAwesomeIcon icon={faPause} />
         </button>
-        <button onClick={this.restart}>
+        <button onClick={this.reset}>
           <FontAwesomeIcon icon={faRedo} />
         </button>
         <div className="slider-wrapper">
