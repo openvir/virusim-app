@@ -224,6 +224,7 @@ class App extends Component<Props, State> {
     return (
       <div className="App">
         <Homepage>
+          <Logo />
           <div className="stage">
             <div className="scene">
               <Virus />
@@ -232,7 +233,6 @@ class App extends Component<Props, State> {
             </div>
           </div>
           <div className="sidebar">
-            <Logo />
             <div className="info-box">
               <h4 className="subtitle">{this.state.keyframe.title}</h4>
               <p>{this.state.keyframe.description}</p>
