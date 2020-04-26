@@ -220,10 +220,9 @@ const Homepage: React.FC = (props) => {
               <div className="infoBox">
                 <h4>Kathi, Rolle im Team</h4>
                 <p>
-                  Die Kommunikation von biologischem Fachwissen stößt an seine
-                  Grenzen. Da es für fachfremde Personen oft schwer
-                  nachzuvollziehen ist, sind Missverständnisse und
-                  Informationslücken die Folge. Informationslücken die Folge.
+                  As Designer it brings me joy to set complexe themes inside a
+                  good information strategy and make them easy to understand and
+                  also pleasing to the eye.
                 </p>
               </div>
             </div>
