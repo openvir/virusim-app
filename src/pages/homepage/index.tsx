@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './styles/index.scss'
 
 import { ReactComponent as LogoSVG } from './assets/logo.svg'
@@ -7,6 +7,8 @@ import stethoscopeImage from './assets/002-stethoscope.png'
 import scientistImage from './assets/006-scientist.png'
 import dataScientistImage from './assets/005-data-scientist.png'
 import analysisImage from './assets/004-analysis.png'
+import virusImage from './assets/Virus-erglaeransicht@2x.png'
+import cellImage from './assets/zelle-einzeln_erklaeransicht@2x.png'
 
 const Homepage: React.FC = (props) => {
   return (
@@ -36,6 +38,41 @@ const Homepage: React.FC = (props) => {
       </header>
 
       <main>
+        <div id="thirdSection" className="section">
+          <div className="wrapper">
+            <div className="col col-50">
+              <h3 className="headline">
+                Erkunden Sie das Geschehen und greifen Sie in die Simulation ein
+              </h3>
+            </div>
+            <div className="col col-50">
+              <p>
+                Die Kommunikation von biologischem Fachwissen stößt an seine
+                Grenzen. Da es für fachfremde Personen oft schwer
+                nachzuvollziehen ist, sind Missverständnisse und
+                Informationslücken die Folge.
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div id="fourthSection" className="section">
+          <div className="wrapper">
+            <div className="col col-50">
+              <div className="col inner-col-50 row alignCenter">
+                <img src={cellImage} alt="user" />
+                <h3 className="headline">Lungenzelle</h3>
+              </div>
+            </div>
+            <div className="col col-50">
+              <div className="col inner-col-50 row alignCenter">
+                <img src={virusImage} alt="user" />
+                <h3 className="headline">COVIC-19-Virus</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="simulationContainer">{props.children}</div>
         <div id="firstSection" className="section">
           <div className="wrapper">
             <div className="col col-50">
@@ -107,24 +144,6 @@ const Homepage: React.FC = (props) => {
               <p>
                 Als Open Soure Projekt via API einfach auf die eigene Website
                 einzubinden, um zu einem Teiler des Wissens für alle zu werden.
-              </p>
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div id="thirdSection" className="section">
-          <div className="wrapper">
-            <div className="col col-50">
-              <h3 className="headline">
-                Erkunden Sie das Geschehen und greifen Sie in die Simulation ein
-              </h3>
-            </div>
-            <div className="col col-50">
-              <p>
-                Die Kommunikation von biologischem Fachwissen stößt an seine
-                Grenzen. Da es für fachfremde Personen oft schwer
-                nachzuvollziehen ist, sind Missverständnisse und
-                Informationslücken die Folge.
               </p>
             </div>
           </div>
