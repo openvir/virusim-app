@@ -11,6 +11,8 @@ class Virus extends Component implements VisualElement {
     return '.virusWrapper'
   }
 
+  setStatus(status: string): void {}
+
   idle() {
     anime({
       targets: '.virus',

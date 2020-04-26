@@ -4,6 +4,8 @@ import { VisualElement } from '../models/Keyframe'
 import './Rna.scss'
 
 class Rna extends Component implements VisualElement {
+  setStatus(status: string): void {}
+
   getTarget() {
     return '.rnaWrapper'
   }

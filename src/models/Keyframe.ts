@@ -1,5 +1,7 @@
 export interface VisualElement {
   getTarget(): string
+
+  setStatus(status: string): void
 }
 
 type Element = {
