@@ -9,6 +9,7 @@ type Element = {
   x: number
   y: number
   rotation: number | undefined
+  scale: number | 1
   status?: string
 }
 

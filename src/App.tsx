@@ -6,12 +6,14 @@ import Virus from './components/Virus'
 import Cell from './components/Cell'
 import Timeline from './components/Timeline'
 import Zoom from './components/Zoom'
+import Scene from './components/Scene'
 
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
 
 const covid19 = new Virus('covid19')
 const rna = new Rna('')
+const scene = new Scene('');
 
 const keyframes: Array<Keyframe> = [
   {
@@ -26,13 +28,22 @@ const keyframes: Array<Keyframe> = [
         x: 800,
         y: 500,
         rotation: 0,
+        scale: 1,
       },
       {
         element: rna,
         x: 800,
         y: 500,
         rotation: 0,
+        scale: 1,
       },
+      {
+        element: scene,
+        x: 1,
+        y: 1,
+        rotation: 0,
+        scale: 1,
+      },      
     ],
   },
   {
@@ -46,13 +57,22 @@ const keyframes: Array<Keyframe> = [
         x: 500,
         y: 500,
         rotation: 20,
+        scale: 1,
       },
       {
         element: rna,
         x: 500,
         y: 500,
         rotation: 20,
+        scale: 1,
       },
+      {
+        element: scene,
+        x: 0,
+        y: 0,
+        rotation: 0,
+        scale: 1,
+      },      
     ],
   },
   {
@@ -66,13 +86,22 @@ const keyframes: Array<Keyframe> = [
           x: 376,
           y: 442,
           rotation: 156,
+          scale: 1,
         },
         {
           element: rna,
           x: 376,
           y: 442,
           rotation: 156,
+          scale: 1,
         },
+        {
+          element: scene,
+          x: 340,
+          y: -137,
+          rotation: 0,
+          scale: 2,
+        },      
       ],
   },
   {
@@ -95,12 +124,14 @@ const keyframes: Array<Keyframe> = [
           x: 354,
           y: 353,
           rotation: 236,
+          scale: 1,
         },
         {
           element: rna,
           x: 354,
           y: 353,
           rotation: 236,
+          scale: 1,
         },
       ],
   },
@@ -115,12 +146,14 @@ const keyframes: Array<Keyframe> = [
         x: 278,
         y: 274,
         rotation: 236,
+        scale: 1,
       },
       {
         element: covid19,
         x: 354,
         y: 353,
         rotation: 236,
+        scale: 1,
         status: 'hidden',
       },
     ],

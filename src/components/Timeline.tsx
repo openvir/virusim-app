@@ -65,6 +65,7 @@ class Timeline extends Component<Props, State> {
               element.x,
               element.y,
               element.rotation || 0,
+              element.scale || 1,
               nextFrame.seconds - currentFrame.seconds
             )
           }
@@ -86,6 +87,7 @@ class Timeline extends Component<Props, State> {
                 element.x,
                 element.y,
                 element.rotation || 0,
+                element.scale || 1,
                 1
               )
             }
@@ -105,6 +107,7 @@ class Timeline extends Component<Props, State> {
                 element.x,
                 element.y,
                 element.rotation || 0,
+                element.scale || 1,
                 1
               )
             }
