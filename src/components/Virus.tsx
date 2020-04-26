@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import anime from 'animejs'
 import { ReactComponent as VirusSVG } from '../svg/viruszelle.svg'
 
-import Rna from './Rna'
-
 import { VisualElement } from '../models/Keyframe'
 
 class Virus extends Component implements VisualElement {
@@ -56,7 +54,6 @@ class Virus extends Component implements VisualElement {
         <div className="virusWrapper" style={{ width: '140px', height: '140px' }}>
           <VirusSVG className="virus" />
         </div>
-        <Rna />
       </div>
     )
   }

@@ -10,9 +10,10 @@ import Scene from './components/Scene'
 
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
+import { RnaAnimations } from './components/RnaAnimations'
 
 const covid19 = new Virus('covid19')
-const rna = new Rna('')
+const rna = new RnaAnimations()
 const scene = new Scene('');
 
 const keyframes: Array<Keyframe> = [
@@ -225,13 +226,17 @@ class App extends Component<Props, State> {
     })
   }
 
+  componentDidMount(): void {
+    rna.idle()
+  }
+
   render() {
     return (
       <div className="App">
         <div className="stage">
           <div className="scene">
-            {covid19.render()}
-            {rna.render()}
+            <Virus />
+            <Rna />
             <Cell />
           </div>
         </div>
