@@ -244,3 +244,35 @@ hr {
     margin: 0px 30px 0px 0px;
   }
 }
+
+#teamSection {
+  background-color: #f1f3f5;
+  .wrapper:first-child {
+    margin-bottom: 100px;
+  }
+  .introText {
+    margin-right: 30px;
+  }
+
+  .personImage {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px #506d7d;
+    box-shadow: 4px 4px 10px #506d7d47;
+    object-fit: cover;
+    &.kathi {
+      object-position: 20% 20%;
+    }
+    &.dominik {
+      object-position: top;
+    }
+  }
+
+  h4 {
+    font-weight: bold;
+    font-size: 21px;
+    margin-bottom: 15px;
+  }
+}

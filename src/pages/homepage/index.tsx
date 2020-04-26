@@ -10,6 +10,12 @@ import analysisImage from './assets/004-analysis.png'
 import virusImage from './assets/Virus-erglaeransicht@2x.png'
 import cellImage from './assets/zelle-einzeln_erklaeransicht@2x.png'
 
+import dominikImage from './assets/Dominik.jpg'
+import claudiaImage from './assets/Claudia.jpg'
+import benjaminImage from './assets/Benjamin.jpg'
+import kathiImage from './assets/Kathi.jpg'
+import fabianImage from './assets/Fabian.jpg'
+
 const Homepage: React.FC = (props) => {
   return (
     <>
@@ -149,6 +155,92 @@ const Homepage: React.FC = (props) => {
           </div>
         </div>
         <hr />
+        <div id="teamSection" className="section">
+          <div className="wrapper">
+            <div className="col col-33">
+              <h3 className="headline">
+                Das Team hinter der Idee mit dem Visuellen Virus-Simulator
+              </h3>
+              <p className="introText">
+                Die Kommunikation von biologischem Fachwissen stößt an seine
+                Grenzen. Da es für fachfremde Personen oft schwer
+                nachzuvollziehen ist, sind Missverständnisse und
+                Informationslücken die Folge. Die Kommunikation von biologischem
+                Fachwissen stößt an seine Grenzen. Da es für fachfremde Personen
+                oft schwer nachzuvollziehen ist, sind Missverständnisse und
+                Informationslücken die Folge. Informationslücken die Folge.
+                Informationslücken die Folge.
+              </p>
+            </div>
+            <div className="col col-33">
+              <img
+                src={dominikImage}
+                alt="user"
+                className="personImage dominik"
+              />
+              <div className="infoBox">
+                <h4>Dominik, Rolle im Team</h4>
+                <p>
+                  Dominik initiated the project ViruSim because he wanted to
+                  take action fighting the current crisis. At the same time, he
+                  wanted to understand more about what actually happens inside
+                  our body when we get infected with a virus and what we can do
+                  about it.
+                </p>
+              </div>
+            </div>
+            <div className="col col-33">
+              <img src={claudiaImage} alt="user" className="personImage" />
+              <div className="infoBox">
+                <h4>Claudia, Rolle im Team</h4>
+                <p>
+                  Claudia is an entrepreneur holding a PhD in Immunology. She is
+                  often startled how little is known about life sciences. With
+                  ViruSim, she wants to help making science enjoyable and easy
+                  to understand for everyone.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="wrapper">
+            <div className="col col-33">
+              <img src={benjaminImage} alt="user" className="personImage" />
+              <div className="infoBox">
+                <h4>Benjamin, Rolle im Team</h4>
+                <p>
+                  Die Kommunikation von biologischem Fachwissen stößt an seine
+                  Grenzen. Da es für fachfremde Personen oft schwer
+                  nachzuvollziehen ist, sind Missverständnisse und
+                  Informationslücken die Folge. Informationslücken die Folge.
+                </p>
+              </div>
+            </div>
+            <div className="col col-33">
+              <img src={kathiImage} alt="user" className="personImage kathi" />
+              <div className="infoBox">
+                <h4>Kathi, Rolle im Team</h4>
+                <p>
+                  Die Kommunikation von biologischem Fachwissen stößt an seine
+                  Grenzen. Da es für fachfremde Personen oft schwer
+                  nachzuvollziehen ist, sind Missverständnisse und
+                  Informationslücken die Folge. Informationslücken die Folge.
+                </p>
+              </div>
+            </div>
+            <div className="col col-33">
+              <img src={fabianImage} alt="user" className="personImage" />
+              <div className="infoBox">
+                <h4>Fabian, Rolle im Team</h4>
+                <p>
+                  The world is fast moving - especially in the times of Corona.
+                  As a software developer I would like to contribute in a great
+                  team to make the mass of information accessible and
+                  understandable for all people.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </>
   )
