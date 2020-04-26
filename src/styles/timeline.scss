@@ -89,6 +89,11 @@
     &:hover {
       color: $red;
     }
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
   }
 
   .subtitle {
