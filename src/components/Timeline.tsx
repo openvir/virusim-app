@@ -209,6 +209,7 @@ class Timeline extends Component<Props, State> {
             value={this.state.progress}
             marks={this.keyframesToMarks()}
             onChange={this.onSliderChange}
+            max={90}
           />
         </div>
       </div>
