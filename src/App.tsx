@@ -9,9 +9,10 @@ import Zoom from './components/Zoom'
 
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
+import { RnaAnimations } from './components/RnaAnimations'
 
 const covid19 = new Virus('covid19')
-const rna = new Rna('')
+const rna = new RnaAnimations()
 
 const keyframes: Array<Keyframe> = [
   {
@@ -162,6 +163,10 @@ class App extends Component<Props, State> {
     this.setState({
       keyframe,
     })
+  }
+
+  componentDidMount(): void {
+    rna.idle()
   }
 
   render() {
