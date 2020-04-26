@@ -30,6 +30,10 @@ class Timeline extends Component<Props, State> {
     playing: false,
   }
 
+  componentDidMount(): void {
+    this.stepUpdated(0)
+  }
+
   keyframesToMarks() {
     const marks: any = {}
     for (const keyframe of this.props.keyframes) {
@@ -54,7 +58,8 @@ class Timeline extends Component<Props, State> {
             element.element.getTarget(),
             element.x,
             element.y,
-            nextFrame.seconds - currentFrame.seconds
+            element.rotation == undefined ? 0 : element.rotation,
+            nextFrame.seconds - currentFrame.seconds,
           )
         }
       }
@@ -65,14 +70,14 @@ class Timeline extends Component<Props, State> {
         for (let i = this.state.animationStep; i <= step; i++) {
           const frame = this.props.keyframes[i]
           for (const element of frame.elements) {
-            moveElement(element.element.getTarget(), element.x, element.y, 1)
+            moveElement(element.element.getTarget(), element.x, element.y, element.rotation == undefined ? 0 : element.rotation, 1)
           }
         }
       } else {
         for (let i = this.state.animationStep; i >= step; i--) {
           const frame = this.props.keyframes[i]
           for (const element of frame.elements) {
-            moveElement(element.element.getTarget(), element.x, element.y, 1)
+            moveElement(element.element.getTarget(), element.x, element.y, element.rotation == undefined ? 0 : element.rotation, 1)
           }
         }
       }

@@ -6,6 +6,7 @@ export function moveElement(
   target: string,
   x: number,
   y: number,
+  rotation: number,
   duration: number
 ) {
   const previousAnimation = previousAnimations[target]
@@ -19,6 +20,7 @@ export function moveElement(
     translateY: 0,
     left: `${x}px`,
     top: `${y}px`,
+    rotate: rotation,
     duration: duration * 1000,
     direction: 'forward',
     easing: 'easeOutElastic(1, .8)',
