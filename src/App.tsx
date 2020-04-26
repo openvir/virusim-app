@@ -169,8 +169,6 @@ class App extends Component<Props, State> {
       <div className="App">
         <div className="stage">
           <div className="scene">
-            {covid19.render()}
-            {rna.render()}
             <Rna />
             <Virus />
             <Cell />
