@@ -1,5 +1,7 @@
 export interface VisualElement {
   getTarget(): string
+
+  setStatus(status: string, remove: boolean): void
 }
 
 type Element = {
@@ -7,6 +9,7 @@ type Element = {
   x: number
   y: number
   rotation: number | undefined
+  status?: string
 }
 
 export type Keyframe = {

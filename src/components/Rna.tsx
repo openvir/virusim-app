@@ -2,33 +2,51 @@ import React, { Component } from 'react'
 
 import { VisualElement } from '../models/Keyframe'
 import './Rna.scss'
+import anime from 'animejs'
 
 class Rna extends Component implements VisualElement {
+  setStatus(status: string, remove: boolean): void {}
+
   getTarget() {
     return '.rnaWrapper'
   }
 
+  idle() {
+    anime({
+      targets: '.rna',
+      duration: 10000,
+      rotate: '360',
+      direction: 'forward',
+      loop: true,
+      easing: 'linear',
+      scale: [0.8, 1, 0.8, 1, 0.8, 1, 0.8, 1],
+    })
+  }
+
+  componentDidMount() {
+    this.idle()
+  }
+
   render() {
     return (
-      <div className="Virus">
-        <div className="rnaWrapper" style={{ width: '30%', height: '30%' }}>
-          <svg
-            width="100%"
-            height="100%"
-            className="virus"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 362 362"
-          >
-            <g>
-              <path
-                fill="none"
-                stroke="#F5EDD1"
-                strokeWidth="6"
-                strokeLinecap="round"
-                strokeMiterlimit="10"
-                d="M252.175,127.048
+      <div className="rnaWrapper" style={{ width: '30%', height: '30%' }}>
+        <svg
+          className="rna"
+          width="100%"
+          height="100%"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 362 362"
+        >
+          <g>
+            <path
+              fill="none"
+              stroke="#F5EDD1"
+              strokeWidth="6"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              d="M252.175,127.048
 	c-12.188,0.771-23.756,5.647-32.816,13.836c-3.007,2.735-5.9,6.464-5.138,10.457c0.878,4.598,6.012,6.905,10.556,8.032
 	c13.816,3.4,28.313,2.821,41.815-1.668c2.056-0.688,4.412-1.871,4.626-4.028c0.308-3.107-3.819-4.452-6.939-4.581
 	c-15.567-0.636-31.124,1.492-45.947,6.287c-4.541,1.471-9.464,3.616-11.304,8.021c-1.678,4.015-0.124,8.821,2.806,12.039
@@ -44,14 +62,14 @@ class Rna extends Component implements VisualElement {
 	c-0.803,1.025-1.382,2.206-1.699,3.469c-2.748,8.766-3.445,18.047-2.039,27.126c0.187,2.237,0.987,4.38,2.313,6.192
 	c1.452,1.695,4.11,2.555,5.985,1.343c1.968-1.271,2.204-4.021,2.114-6.361c-0.43-10.858-3.395-21.467-8.658-30.975
 	c-2.085-3.757-6.184-7.827-10.01-5.871"
-              />
-              <path
-                fill="none"
-                stroke="#F5EDD1"
-                strokeWidth="6"
-                strokeLinecap="round"
-                strokeMiterlimit="10"
-                d="M167.6,227.849
+            />
+            <path
+              fill="none"
+              stroke="#F5EDD1"
+              strokeWidth="6"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              d="M167.6,227.849
 	c-14.024,1.45-22.207,17.538-28.668,30.036c-0.991,1.917-1.862,4.379-0.562,5.98c1.873,2.309,5.696,0.295,7.989-1.824
 	c11.41-10.547,17.771-19.787,25.003-33.463c2.222-4.201,4.259-9.125,2.597-13.389c-1.516-3.887-5.848-6.022-10.083-6.115
 	c-4.236-0.094-8.404,1.496-12.337,3.293c-12.704,5.827-24.217,13.963-33.95,23.992c-2.662,2.744-5.286,5.815-6.08,9.496
@@ -66,14 +84,14 @@ class Rna extends Component implements VisualElement {
 	c-0.118-1.246-0.504-2.452-1.132-3.535c-3.938-7.821-9.703-14.576-16.809-19.692c-1.652-1.38-3.665-2.258-5.801-2.53
 	c-2.168-0.114-4.625,1.188-5.137,3.329c-0.536,2.247,1.146,4.263,2.785,5.774c7.655,7.027,16.91,12.079,26.961,14.717
 	c4.002,1.054,9.639,0.893,11.028-3.128"
-              />
-              <path
-                fill="none"
-                stroke="#F5EDD1"
-                strokeWidth="6"
-                strokeLinecap="round"
-                strokeMiterlimit="10"
-                d="M136.862,103.87
+            />
+            <path
+              fill="none"
+              stroke="#F5EDD1"
+              strokeWidth="6"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              d="M136.862,103.87
 	c11.598,0.806,15.912,0.011,19.49-1.127c3.544-1.127,9.233-4.642,14.335-8.859c3.793-3.135,9.818-5.178,14.256-3.049
 	c6.362,3.049,5.234,30.11-5.572,38.295c-17.703,14.042,4.99-29.006,17.161-36.306c2.235-1.341,4.957-2.459,7.39-1.522
 	c1.227,0.532,2.271,1.408,3.008,2.523c3.856,5.392,3.815,13.475,0.386,19.148c-6.668,11.032-5.379,32.616-14.077,25.851
@@ -82,10 +100,9 @@ class Rna extends Component implements VisualElement {
 	c-6.37,3.735-13.787,7.676-21.017,9.182c-0.853,0.281-1.779,0.242-2.604-0.111c-1.112-0.65-1.241-2.221-0.951-3.476
 	c1.313-5.683,10.43-10.913,16.119-12.198c7.11-1.76,14.459-2.355,21.759-1.764c2.522,0.167,3.828,0.062,5.946,1.441
 	c0.721,0.469,2.415,3.833,0.645,5.638"
-              />
-            </g>
-          </svg>
-        </div>
+            />
+          </g>
+        </svg>
       </div>
     )
   }
