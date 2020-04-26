@@ -15,7 +15,7 @@ const Homepage: React.FC = (props) => {
     <>
       <header id="banner">
         <div className="logoContainer">
-          <LogoSVG className="logo" />
+          <LogoSVG className="homeLogo" />
         </div>
         <div className="content">
           <h2>Virologie in einfach und interaktiv für Wissbegierige</h2>
