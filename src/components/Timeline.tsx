@@ -77,26 +77,37 @@ class Timeline extends Component<Props, State> {
         for (let i = this.state.animationStep; i <= step; i++) {
           const frame = this.props.keyframes[i]
           for (const element of frame.elements) {
-            moveElement(
-              element.element.getTarget(),
-              element.x,
-              element.y,
-              element.rotation || 0,
-              1
-            )
+            if (element.status) {
+              element.element.setStatus(element.status)
+            }
+            if (element.x && element.y) {
+              moveElement(
+                element.element.getTarget(),
+                element.x,
+                element.y,
+                element.rotation || 0,
+                1
+              )
+            }
           }
         }
       } else {
+        // going backwards in time
         for (let i = this.state.animationStep; i >= step; i--) {
           const frame = this.props.keyframes[i]
           for (const element of frame.elements) {
-            moveElement(
-              element.element.getTarget(),
-              element.x,
-              element.y,
-              element.rotation || 0,
-              1
-            )
+            if (element.status) {
+              element.element.setStatus('')
+            }
+            if (element.x && element.y) {
+              moveElement(
+                element.element.getTarget(),
+                element.x,
+                element.y,
+                element.rotation || 0,
+                1
+              )
+            }
           }
         }
       }

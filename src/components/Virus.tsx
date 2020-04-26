@@ -13,6 +13,19 @@ class Virus extends Component implements VisualElement {
 
   setStatus(status: string): void {
     console.log(`Updated status of virus to ${status}.`)
+    if (status === 'hidden') {
+      anime({
+        targets: '.virus',
+        opacity: 0,
+        duration: 1000,
+      })
+    } else if (status === '') {
+      anime({
+        targets: '.virus',
+        opacity: 1,
+        duration: 1000,
+      })
+    }
   }
 
   idle() {

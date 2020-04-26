@@ -86,7 +86,7 @@ const keyframes: Array<Keyframe> = [
         x: 460,
         y: 260,
         rotation: 200,
-        status: 'hide',
+        status: 'hidden',
       },
     ],
   },
