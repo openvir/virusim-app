@@ -88,6 +88,7 @@ const keyframes: Array<Keyframe> = [
         x: 200,
         y: 200,
         rotation: 200,
+        status: 'stopIdle',
       },
       {
         element: covid19,
