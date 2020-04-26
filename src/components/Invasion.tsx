@@ -10,7 +10,7 @@ class Invasion extends Component implements VisualElement {
 
     setStatus(status: string, remove: boolean): void {
         console.log(`Updated status of invasion to ${status}.`)
-        if (status === 'hidden') {
+        if (status === 'visible') {
           if (remove) {
             anime({
               targets: '.invasionWrapper',
