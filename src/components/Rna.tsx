@@ -31,7 +31,10 @@ class Rna extends Component implements VisualElement {
 
   render() {
     return (
-      <div className="rnaWrapper" style={{ width: '30%', height: '30%' }}>
+      <div
+        className="rnaWrapper"
+        style={{ zIndex: 1000, width: '30%', height: '30%' }}
+      >
         <RnaSVG className="rna" />
       </div>
     )
