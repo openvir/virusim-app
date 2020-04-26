@@ -24,13 +24,13 @@ const keyframes: Array<Keyframe> = [
       {
         element: covid19,
         x: 800,
-        y: 400,
+        y: 500,
         rotation: 0,
       },
       {
         element: rna,
         x: 800,
-        y: 400,
+        y: 500,
         rotation: 0,
       },
     ],
@@ -43,15 +43,15 @@ const keyframes: Array<Keyframe> = [
     elements: [
       {
         element: covid19,
-        x: 460,
-        y: 260,
-        rotation: 200,
+        x: 500,
+        y: 500,
+        rotation: 20,
       },
       {
         element: rna,
-        x: 460,
-        y: 260,
-        rotation: 200,
+        x: 500,
+        y: 500,
+        rotation: 20,
       },
     ],
   },
@@ -60,21 +60,49 @@ const keyframes: Array<Keyframe> = [
     title: 'Entry',
     description:
       'The ACE-2 marker on the surface of the cells deep down in our lungs acts as a receptor for the spike protein, the characteristic crown-like feature of the SARS-CoV-2 virus. In other words, SARS-CoV-2 carries a key with it that fits perfectly into a lock on our lung cells.',
-    elements: [],
+      elements: [
+        {
+          element: covid19,
+          x: 376,
+          y: 442,
+          rotation: 156,
+        },
+        {
+          element: rna,
+          x: 376,
+          y: 442,
+          rotation: 156,
+        },
+      ],
   },
   {
     seconds: 30,
     title: 'Fusion',
     description:
       'When the spike protein of the virus binds to the ACE-2 receptor, “a door opens” and the virus can enter the cell. This process is called “fusion” and requires the plasma membrane of the host cell and the viral membrane to merge. The key spike protein is also called a fusion protein and can be found on the surface of many other viruses like HIV, Influenza and Ebola.',
-    elements: [],
+      elements: [
+
+      ],
   },
   {
     seconds: 40,
     title: 'Viral RNA release',
     description:
       'Once fusion of the virus and the host cell has occurred, the viral genome is released directly into the cytoplasms of the host cell. The virus has now reached its first big milestone and can start the process of  multiplication. ',
-    elements: [],
+      elements: [
+        {
+          element: covid19,
+          x: 354,
+          y: 353,
+          rotation: 236,
+        },
+        {
+          element: rna,
+          x: 354,
+          y: 353,
+          rotation: 236,
+        },
+      ],
   },
   {
     seconds: 45,
@@ -84,15 +112,15 @@ const keyframes: Array<Keyframe> = [
     elements: [
       {
         element: rna,
-        x: 200,
-        y: 200,
-        rotation: 200,
+        x: 278,
+        y: 274,
+        rotation: 236,
       },
       {
         element: covid19,
-        x: 460,
-        y: 260,
-        rotation: 200,
+        x: 354,
+        y: 353,
+        rotation: 236,
         status: 'hidden',
       },
     ],
@@ -171,8 +199,6 @@ class App extends Component<Props, State> {
           <div className="scene">
             {covid19.render()}
             {rna.render()}
-            <Rna />
-            <Virus />
             <Cell />
           </div>
         </div>

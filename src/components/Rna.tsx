@@ -24,12 +24,12 @@ class Rna extends Component implements VisualElement {
   }
 
   componentDidMount() {
-    this.idle()
+    //this.idle()
   }
 
   render() {
     return (
-      <div className="rnaWrapper" style={{ width: '30%', height: '30%' }}>
+      <div className="rnaWrapper" style={{ width: '140px', height: '140px' }}>
         <svg
           className="rna"
           width="100%"

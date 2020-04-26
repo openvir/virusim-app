@@ -23,7 +23,7 @@ export function moveElement(
     rotate: rotation,
     duration: duration * 1000,
     direction: 'forward',
-    easing: 'easeOutElastic(1, .8)',
+    easing: 'easeOutElastic(0.2, .8)',
     loop: false,
   })
 }
