@@ -1,0 +1,244 @@
+#banner {
+  height: 100vh;
+  background-image: url('../assets/headerimage_@2x.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  .logoContainer {
+    display: inline-block;
+    padding: 10px 20px;
+    background: white;
+    .homeLogo {
+      margin: 0;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    height: calc(100% - 120px);
+    @media (min-width: 1200px) {
+      margin-left: 50%;
+      margin-right: 120px;
+    }
+    h2 {
+      margin-bottom: 10px;
+      max-width: 800px;
+    }
+    .infoBox {
+      margin-top: 12vh;
+    }
+  }
+
+  #decorationVirus1 {
+    display: block;
+    background-image: url('../assets/virus@2x.png');
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    width: 24vw;
+    height: 24vw;
+    background-size: contain;
+  }
+
+  #decorationVirus2 {
+    display: block;
+    background-image: url('../assets/virus-1@2x.png');
+    position: absolute;
+    top: 7%;
+    right: 10%;
+    width: 10vw;
+    height: 10vw;
+    background-size: contain;
+  }
+
+  .scrollDown {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    button {
+      height: 85px;
+      width: 78px;
+      background-color: unset;
+      background-image: url('../assets/scroll-down.png');
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      &:after {
+        content: 'scroll down';
+        display: block;
+        position: relative;
+        left: 130%;
+        height: 100%;
+        width: 70px;
+        font-size: 18px;
+        color: #506d7d;
+      }
+      &:focus {
+        outline: unset;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 72px;
+}
+h3 {
+  font-size: 34px;
+}
+p {
+  font-size: 18px !important;
+  line-height: 24px !important;
+}
+.infoBox {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  box-shadow: 4px 4px 10px #506d7d;
+  box-shadow: 4px 4px 10px #506d7d47;
+}
+
+main {
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 20px;
+    .headline {
+      margin-bottom: 40px;
+    }
+    .wrapper {
+      display: flex;
+      width: 100%;
+      max-width: 1400px;
+      .col {
+        display: flex;
+        flex-direction: column;
+        &.row {
+          flex-direction: row;
+        }
+        &.alignCenter {
+          align-items: center;
+        }
+      }
+      .col-100 {
+        width: 100%;
+      }
+      .col-50 {
+        width: calc(50% - 60px);
+        &:first-child {
+          margin-right: 60px;
+        }
+        &:last-child {
+          margin-left: 60px;
+        }
+      }
+      .inner-col-50 {
+        width: calc(100% - 10px);
+        &:first-child {
+          margin-right: 10px;
+        }
+        &:last-child {
+          margin-left: 10px;
+        }
+      }
+      .col-33 {
+        width: calc(33% - 10px);
+        &:first-child {
+          margin-right: 15px;
+        }
+        &:last-child {
+          margin-left: 15px;
+        }
+      }
+    }
+    h3 {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    img {
+      width: 100px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+hr {
+  background: white;
+  margin: 0;
+}
+
+#firstSection,
+#secondSection,
+#thirdSection,
+#fourthSection {
+  background: white;
+}
+
+#thirdSection,
+#fourthSection {
+  padding: 80px 20px;
+  .headline {
+    margin-bottom: 0px;
+  }
+}
+
+#secondSection {
+  .headline {
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  .box {
+    padding: 30px 30px 50px 30px;
+    border-radius: 10px;
+    img {
+      margin: 50px auto;
+    }
+    text-align: center;
+    p {
+      font-size: 24px !important;
+      line-height: 28px !important;
+    }
+  }
+  .blue-box {
+    background: #95c9cc;
+  }
+  .red-box {
+    background: #ffa371;
+  }
+  .green-box {
+    background: #a7d669;
+  }
+}
+
+#simulationContainer {
+  position: relative;
+  height: 80vh;
+}
+
+#fourthSection {
+  padding: 30px 20px;
+  h3 {
+    font-weight: normal;
+    text-transform: unset;
+  }
+  img {
+    width: 180px;
+    height: auto;
+    margin: 0px 30px 0px 0px;
+  }
+}

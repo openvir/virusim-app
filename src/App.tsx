@@ -11,6 +11,7 @@ import Scene from './components/Scene'
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
 import { RnaAnimations } from './components/RnaAnimations'
+import Homepage from './pages/homepage'
 
 const covid19 = new Virus('covid19')
 const rna = new RnaAnimations()
@@ -222,27 +223,29 @@ class App extends Component<Props, State> {
   render() {
     return (
       <div className="App">
-        <Logo />
-        <div className="stage">
-          <div className="scene">
-            <Virus />
-            <Rna />
-            <Cell />
+        <Homepage>
+          <Logo />
+          <div className="stage">
+            <div className="scene">
+              <Virus />
+              <Rna />
+              <Cell />
+            </div>
           </div>
-        </div>
-        <div className="sidebar">
-          <div className="info-box">
-            <h4 className="subtitle">{this.state.keyframe.title}</h4>
-            <p>{this.state.keyframe.description}</p>
+          <div className="sidebar">
+            <div className="info-box">
+              <h4 className="subtitle">{this.state.keyframe.title}</h4>
+              <p>{this.state.keyframe.description}</p>
+            </div>
           </div>
-        </div>
-        <Zoom />
-        <div className="bottombar">
-          <Timeline
-            keyframes={keyframes}
-            onKeyframeUpdated={this.keyframeUpdated}
-          />
-        </div>
+          <Zoom />
+          <div className="bottombar">
+            <Timeline
+              keyframes={keyframes}
+              onKeyframeUpdated={this.keyframeUpdated}
+            />
+          </div>
+        </Homepage>
       </div>
     )
   }
