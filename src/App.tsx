@@ -204,7 +204,7 @@ const keyframes: Array<Keyframe> = [
         y: 353,
         rotation: 0,
         scale: 1,
-        status: 'hidden',
+        status: 'visible',
       },
     ],
   },
@@ -221,7 +221,7 @@ const keyframes: Array<Keyframe> = [
         y: 353,
         rotation: 0,
         scale: 1,
-        status: 'hidden',
+        status: 'visible',
       }
     ],
   },
