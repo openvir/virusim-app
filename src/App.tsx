@@ -11,6 +11,7 @@ import Scene from './components/Scene'
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
 import { RnaAnimations } from './components/RnaAnimations'
+import Homepage from './pages/homepage'
 
 const covid19 = new Virus('covid19')
 const rna = new RnaAnimations()
@@ -242,7 +243,8 @@ class App extends Component<Props, State> {
             keyframes={keyframes}
             onKeyframeUpdated={this.keyframeUpdated}
           />
-        </div>
+    </div>*/}
+        <Homepage />
       </div>
     )
   }
