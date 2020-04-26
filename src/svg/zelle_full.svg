@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1008.54511mm" height="1050.86291mm" viewBox="0 0 2858.86802 2978.82399">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 2858.86802 2978.82399">
   <defs>
     <clipPath id="a1881c39-fcf9-40c6-9e76-9a4db77a4c40">
       <rect x="3090.67834" width="1756.98975" height="1756.98975" style="fill: none"/>
     </clipPath>
   </defs>
-  <title>zelle_full_Zeichenfläche</title>
+  <title>Body Cell</title>
   <g id="bdd0122f-47f5-4fff-8001-edc06ee7ad62" data-name="Ebene 1">
     <g>
       <path d="M2669.46686,1879.30388V1082.29031a574.74207,574.74207,0,0,0-287.371-497.74124l-690.234-398.50679a574.74208,574.74208,0,0,0-574.74207,0l-690.234,398.50679a574.74208,574.74208,0,0,0-287.371,497.74124v797.01357a574.74208,574.74208,0,0,0,287.371,497.74124l690.234,398.50679a574.74208,574.74208,0,0,0,574.74207,0l690.234-398.50679A574.74207,574.74207,0,0,0,2669.46686,1879.30388Z" style="fill: #d1e2a4;stroke: #a7cc6b;stroke-miterlimit: 10;stroke-width: 18px"/>
