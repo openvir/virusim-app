@@ -24,14 +24,14 @@ class Virus extends Component implements VisualElement {
   }
 
   componentDidMount() {
-    //this.idle()
+    this.idle()
   }
 
   render() {
     return (
       <div className="Virus">
         <div className="virusWrapper" style={{ width: '30%', height: '30%' }}>
-            <VirusSVG className="virus" />
+          <VirusSVG className="virus" />
         </div>
         <Rna />
       </div>
