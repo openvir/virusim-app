@@ -142,23 +142,17 @@ const keyframes: Array<Keyframe> = [
 type Props = {}
 
 type State = {
-  description: string
-  title: string
+  keyframe: Keyframe
 }
 
 class App extends Component<Props, State> {
   state: Readonly<State> = {
-    title: 'What is an Infection',
-    description:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore ' +
-      'et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. ' +
-      'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+    keyframe: keyframes[0],
   }
 
   keyframeUpdated = (keyframe: Keyframe) => {
     this.setState({
-      title: keyframe.title,
-      description: keyframe.description,
+      keyframe,
     })
   }
 
@@ -177,8 +171,8 @@ class App extends Component<Props, State> {
         <div className="sidebar">
           <Logo />
           <div className="info-box">
-            <h4 className="subtitle">{this.state.title}</h4>
-            <p>{this.state.description}</p>
+            <h4 className="subtitle">{this.state.keyframe.title}</h4>
+            <p>{this.state.keyframe.description}</p>
           </div>
         </div>
         <Zoom />
