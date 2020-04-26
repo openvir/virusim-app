@@ -37,7 +37,7 @@ class Timeline extends Component<Props, State> {
   keyframesToMarks() {
     const marks: any = {}
     for (const keyframe of this.props.keyframes) {
-      marks[keyframe.seconds.toString()] = keyframe.title
+      marks[keyframe.seconds.toString()] = keyframe.mark
     }
     return marks
   }

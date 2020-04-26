@@ -14,6 +14,7 @@ type Element = {
 }
 
 export type Keyframe = {
+  mark: string
   seconds: number
   title: string
   description: string
