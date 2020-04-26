@@ -7,6 +7,7 @@ type Element = {
   x: number
   y: number
   rotation: number | undefined
+  status?: string
 }
 
 export type Keyframe = {
