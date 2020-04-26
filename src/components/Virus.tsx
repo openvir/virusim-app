@@ -11,7 +11,9 @@ class Virus extends Component implements VisualElement {
     return '.virusWrapper'
   }
 
-  setStatus(status: string): void {}
+  setStatus(status: string): void {
+    console.log(`Updated status of virus to ${status}.`)
+  }
 
   idle() {
     anime({

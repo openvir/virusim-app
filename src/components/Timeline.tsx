@@ -53,14 +53,21 @@ class Timeline extends Component<Props, State> {
           animationStep: step + 1,
         })
         const nextFrame = this.props.keyframes[step + 1]
+        for (const element of currentFrame.elements) {
+          if (element.status) {
+            element.element.setStatus(element.status)
+          }
+        }
         for (const element of nextFrame.elements) {
-          moveElement(
-            element.element.getTarget(),
-            element.x,
-            element.y,
-            element.rotation == undefined ? 0 : element.rotation,
-            nextFrame.seconds - currentFrame.seconds,
-          )
+          if (element.x && element.y) {
+            moveElement(
+              element.element.getTarget(),
+              element.x,
+              element.y,
+              element.rotation || 0,
+              nextFrame.seconds - currentFrame.seconds
+            )
+          }
         }
       }
     } else {
@@ -70,14 +77,26 @@ class Timeline extends Component<Props, State> {
         for (let i = this.state.animationStep; i <= step; i++) {
           const frame = this.props.keyframes[i]
           for (const element of frame.elements) {
-            moveElement(element.element.getTarget(), element.x, element.y, element.rotation == undefined ? 0 : element.rotation, 1)
+            moveElement(
+              element.element.getTarget(),
+              element.x,
+              element.y,
+              element.rotation || 0,
+              1
+            )
           }
         }
       } else {
         for (let i = this.state.animationStep; i >= step; i--) {
           const frame = this.props.keyframes[i]
           for (const element of frame.elements) {
-            moveElement(element.element.getTarget(), element.x, element.y, element.rotation == undefined ? 0 : element.rotation, 1)
+            moveElement(
+              element.element.getTarget(),
+              element.x,
+              element.y,
+              element.rotation || 0,
+              1
+            )
           }
         }
       }
@@ -156,7 +175,7 @@ class Timeline extends Component<Props, State> {
     return (
       <div className="timeline">
         <div className="controls">
-            <button
+          <button
             onClick={this.play}
             style={{ marginLeft: '10px' }}
             disabled={this.state.playing}
