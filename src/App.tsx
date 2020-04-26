@@ -4,6 +4,7 @@ import './styles/index.scss'
 import Logo from './components/Logo'
 import Virus from './components/Virus'
 import Cell from './components/Cell'
+import Invasion from './components/Invasion'
 import Timeline from './components/Timeline'
 import Zoom from './components/Zoom'
 import Scene from './components/Scene'
@@ -15,6 +16,7 @@ import { RnaAnimations } from './components/RnaAnimations'
 const covid19 = new Virus('covid19')
 const rna = new RnaAnimations()
 const scene = new Scene('')
+const invasion = new Invasion('')
 
 const keyframes: Array<Keyframe> = [
   {
@@ -43,9 +45,17 @@ const keyframes: Array<Keyframe> = [
       {
         element: scene,
         x: 1,
-        y: 1,
+        y: -100,
         rotation: 0,
         scale: 1,
+      },
+      {
+        element: invasion,
+        x: -900,
+        y: -900,
+        rotation: 0,
+        scale: 1,
+        status: 'hidden',
       },
     ],
   },
@@ -77,6 +87,14 @@ const keyframes: Array<Keyframe> = [
         rotation: 0,
         scale: 1,
       },
+      {
+        element: invasion,
+        x: -900,
+        y: -900,
+        rotation: 0,
+        scale: 1,
+        status: 'hidden',
+      },
     ],
   },
   {
@@ -106,6 +124,14 @@ const keyframes: Array<Keyframe> = [
         y: -137,
         rotation: 0,
         scale: 2,
+      },
+      {
+        element: invasion,
+        x: -900,
+        y: -900,
+        rotation: 0,
+        scale: 1,
+        status: 'hidden',
       },
     ],
   },
@@ -178,7 +204,16 @@ const keyframes: Array<Keyframe> = [
     mark: 'Assembly',
     description:
       'New structural viral proteins have been manufactured in the endoplasmic reticulum while new viral RNA and nucleocapsid proteins were made in the cytoplasm of the host. All parts are now assembled and a new mature viron is formed.',
-    elements: [],
+    elements: [
+      {
+        element: invasion,
+        x: 0,
+        y: 0,
+        rotation: 0,
+        scale: 1,
+        status: 'hidden',
+      },
+    ],
   },
   {
     seconds: 80,
@@ -186,7 +221,22 @@ const keyframes: Array<Keyframe> = [
     mark: 'Release',
     description:
       'In a process called exocytosis, many newly build virons exit the host cell.',
-    elements: [],
+    elements: [
+      {
+        element: scene,
+        x: 170,
+        y: 1,
+        rotation: 0,
+        scale: 0.5,
+      }, 
+      {
+        element: invasion,
+        x: 354,
+        y: 353,
+        rotation: 0,
+        scale: 1,
+      },
+    ],
   },
   {
     seconds: 90,
@@ -194,7 +244,15 @@ const keyframes: Array<Keyframe> = [
     mark: 'Invasion',
     description:
       'Now thousands and thousand of more viruses have been made. They leave through the host’s respiratory system through sneezing or coughing – ready to infect new hosts.',
-    elements: [],
+    elements: [      
+      {
+        element: invasion,
+        x: 354,
+        y: 353,
+        rotation: 0,
+        scale: 1,
+      }
+    ],
   },
 ]
 
@@ -228,6 +286,7 @@ class App extends Component<Props, State> {
             <Virus />
             <Rna />
             <Cell />
+            <Invasion />
           </div>
         </div>
         <div className="sidebar">
