@@ -55,7 +55,7 @@ class Timeline extends Component<Props, State> {
         const nextFrame = this.props.keyframes[step + 1]
         for (const element of currentFrame.elements) {
           if (element.status) {
-            element.element.setStatus(element.status)
+            element.element.setStatus(element.status, false)
           }
         }
         for (const element of nextFrame.elements) {
@@ -78,7 +78,7 @@ class Timeline extends Component<Props, State> {
           const frame = this.props.keyframes[i]
           for (const element of frame.elements) {
             if (element.status) {
-              element.element.setStatus(element.status)
+              element.element.setStatus(element.status, false)
             }
             if (element.x && element.y) {
               moveElement(
@@ -97,7 +97,7 @@ class Timeline extends Component<Props, State> {
           const frame = this.props.keyframes[i]
           for (const element of frame.elements) {
             if (element.status) {
-              element.element.setStatus('')
+              element.element.setStatus(element.status, true)
             }
             if (element.x && element.y) {
               moveElement(

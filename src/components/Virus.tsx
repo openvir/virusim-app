@@ -11,20 +11,22 @@ class Virus extends Component implements VisualElement {
     return '.virusWrapper'
   }
 
-  setStatus(status: string): void {
+  setStatus(status: string, remove: boolean): void {
     console.log(`Updated status of virus to ${status}.`)
     if (status === 'hidden') {
-      anime({
-        targets: '.virus',
-        opacity: 0,
-        duration: 1000,
-      })
-    } else if (status === '') {
-      anime({
-        targets: '.virus',
-        opacity: 1,
-        duration: 1000,
-      })
+      if (remove) {
+        anime({
+          targets: '.virus',
+          opacity: 1,
+          duration: 1000,
+        })
+      } else {
+        anime({
+          targets: '.virus',
+          opacity: 0,
+          duration: 1000,
+        })
+      }
     }
   }
 

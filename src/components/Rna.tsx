@@ -5,7 +5,7 @@ import './Rna.scss'
 import anime from 'animejs'
 
 class Rna extends Component implements VisualElement {
-  setStatus(status: string): void {}
+  setStatus(status: string, remove: boolean): void {}
 
   getTarget() {
     return '.rnaWrapper'

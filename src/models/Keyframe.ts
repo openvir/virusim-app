@@ -1,7 +1,7 @@
 export interface VisualElement {
   getTarget(): string
 
-  setStatus(status: string): void
+  setStatus(status: string, remove: boolean): void
 }
 
 type Element = {
