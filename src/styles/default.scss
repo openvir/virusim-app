@@ -18,13 +18,10 @@ body {
     margin-bottom: $gutter-width;
   }
 
-  p {
-    font-size: 14px;
-    line-height: 16px;
-  }
-
   .logo {
-    margin-bottom: $gutter-width * 2;
+    position: absolute;
+    top: $gutter-width;
+    right: $gutter-width;
     text-align: right;
 
     svg {
@@ -66,8 +63,8 @@ body {
     width: 25%;
     margin: $gutter-width;
     position: absolute;
-    right: 0;
-    top: 0;
+    left: 0;
+    bottom: 120px;
   }
 
   .bottombar {
@@ -80,15 +77,17 @@ body {
   .info-box {
     background: $white;
     border-radius: 5px;
-    padding: $gutter-width;
+    padding: $gutter-width $gutter-width $gutter-width*1.5;
     box-shadow: 5px 5px 26px -17px rgba(80, 109, 125, 1);
+    transition: all 2s;
   }
 
   .zoom {
     position: absolute;
     font-size: 20px;
-    left: 20px;
-    bottom: 220px;
+    right: 20px;
+    bottom: 140px;
+    padding: 0 $gutter-width;
 
     span {
       cursor: pointer;
