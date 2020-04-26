@@ -49,14 +49,6 @@ const keyframes: Array<Keyframe> = [
         rotation: 0,
         scale: 1,
       },
-      {
-        element: invasion,
-        x: -900,
-        y: -900,
-        rotation: 0,
-        scale: 1,
-        status: 'hidden',
-      },
     ],
   },
   {
@@ -86,14 +78,6 @@ const keyframes: Array<Keyframe> = [
         y: 0,
         rotation: 0,
         scale: 1,
-      },
-      {
-        element: invasion,
-        x: -900,
-        y: -900,
-        rotation: 0,
-        scale: 1,
-        status: 'hidden',
       },
     ],
   },
@@ -125,14 +109,6 @@ const keyframes: Array<Keyframe> = [
         rotation: 0,
         scale: 2,
       },
-      {
-        element: invasion,
-        x: -900,
-        y: -900,
-        rotation: 0,
-        scale: 1,
-        status: 'hidden',
-      },
     ],
   },
   {
@@ -156,6 +132,7 @@ const keyframes: Array<Keyframe> = [
         y: 353,
         rotation: 236,
         scale: 1,
+        status: 'visible'
       },
       {
         element: rna,
@@ -163,6 +140,7 @@ const keyframes: Array<Keyframe> = [
         y: 353,
         rotation: 236,
         scale: 1,
+        status: 'visible'
       },
     ],
   },
@@ -204,16 +182,7 @@ const keyframes: Array<Keyframe> = [
     mark: 'Assembly',
     description:
       'New structural viral proteins have been manufactured in the endoplasmic reticulum while new viral RNA and nucleocapsid proteins were made in the cytoplasm of the host. All parts are now assembled and a new mature viron is formed.',
-    elements: [
-      {
-        element: invasion,
-        x: 0,
-        y: 0,
-        rotation: 0,
-        scale: 1,
-        status: 'hidden',
-      },
-    ],
+    elements: [],
   },
   {
     seconds: 80,
@@ -235,6 +204,7 @@ const keyframes: Array<Keyframe> = [
         y: 353,
         rotation: 0,
         scale: 1,
+        status: 'hidden',
       },
     ],
   },
@@ -251,6 +221,7 @@ const keyframes: Array<Keyframe> = [
         y: 353,
         rotation: 0,
         scale: 1,
+        status: 'hidden',
       }
     ],
   },
