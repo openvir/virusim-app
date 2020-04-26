@@ -93,6 +93,10 @@
     &:disabled {
       cursor: default;
       opacity: 0.5;
+
+      &:hover{
+        color: $primaryColor;
+      }
     }
   }
 
