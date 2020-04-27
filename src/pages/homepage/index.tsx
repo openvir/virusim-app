@@ -25,9 +25,7 @@ const Homepage: React.FC = (props) => {
         </div>
         <div className="content">
           <h2>Virology Made Easy</h2>
-          <h3>
-            SARS-CoV-2: An Interactive Tool for Visualizing SARS-CoV-2 Infection
-          </h3>
+          <h3>An Interactive Tool for Visualizing SARS-CoV-2 Infections</h3>
           <div className="infoBox">
             <p>
               Science is fascinating. Unfortunately, the biological processes in
