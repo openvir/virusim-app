@@ -78,7 +78,7 @@ const Homepage: React.FC = (props) => {
             <div className="col col-50">
               <div className="col inner-col-50 row alignCenter">
                 <img src={cellImage} alt="user" />
-                <h3 className="headline">lung cell</h3>
+                <h3 className="headline">Lung Cell</h3>
               </div>
             </div>
             <div className="col col-50">
