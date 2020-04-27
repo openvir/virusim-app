@@ -40,7 +40,16 @@ const Homepage: React.FC = (props) => {
         <div id="decorationVirus1"></div>
         <div id="decorationVirus2"></div>
         <div className="scrollDown">
-          <button></button>
+          <button
+            onClick={() => {
+              if (document) {
+                const x = document.getElementById('simulationContainer')
+                if (x) {
+                  x.scrollIntoView()
+                }
+              }
+            }}
+          ></button>
         </div>
       </header>
 
