@@ -155,7 +155,7 @@ class Timeline extends Component<Props, State> {
         this.stepUpdated(this.state.step)
         this.interval = setInterval(
           () => this.setProgress(this.state.progress + 1),
-          500
+          1500
         )
       }
     )
