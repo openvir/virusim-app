@@ -25,7 +25,7 @@ const Homepage: React.FC = (props) => {
         </div>
         <div className="content">
           <h2>Virology Made Easy</h2>
-          <h3>An Interactive Tool for Visualizing Infection</h3>
+          <h3>An Interactive Tool for Visualizing Infections</h3>
           <div className="infoBox">
             <p>
               Science is fascinating. Unfortunately, the biological processes in
