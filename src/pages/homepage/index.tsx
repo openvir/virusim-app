@@ -24,14 +24,15 @@ const Homepage: React.FC = (props) => {
           <LogoSVG className="homeLogo" />
         </div>
         <div className="content">
-          <h2>Virologie in einfach und interaktiv für Wissbegierige</h2>
-          <h3>Virale Vorgänge visuell simuliert</h3>
+          <h2>Virology Made Easy</h2>
+          <h3>An Interactive Tool for Visualizing Infection</h3>
           <div className="infoBox">
             <p>
-              Die Kommunikation von biologischem Fachwissen stößt an seine
-              Grenzen. Da es für fachfremde Personen oft schwer nachzuvollziehen
-              ist, sind Missverständnisse und Informationslücken die Folge. Wir
-              wollen das ändern - mit Hilfe interaktiver Virus-Simulation.
+              Science is fascinating. Unfortunately, the biological processes in
+              our bodies are complex and hard to understand leaving many of us
+              misinformed. This interactive and fun tool helps you discover the
+              world of virology so you can learn and make informed decisions
+              that protect you and others.
             </p>
           </div>
         </div>
@@ -48,15 +49,16 @@ const Homepage: React.FC = (props) => {
           <div className="wrapper">
             <div className="col col-50">
               <h3 className="headline">
-                Erkunden Sie das Geschehen und greifen Sie in die Simulation ein
+                Start now and discover how SARS-CoV-2 infects the cells deep
+                down in the lung
               </h3>
             </div>
             <div className="col col-50">
               <p>
-                Die Kommunikation von biologischem Fachwissen stößt an seine
-                Grenzen. Da es für fachfremde Personen oft schwer
-                nachzuvollziehen ist, sind Missverständnisse und
-                Informationslücken die Folge.
+                The Coronavirus has been able to spread around the world causing
+                a global pandemic. Learn how it multiplies in our bodies by
+                scrolling through the timeline and reading about each step along
+                the way.
               </p>
             </div>
           </div>
@@ -67,89 +69,89 @@ const Homepage: React.FC = (props) => {
             <div className="col col-50">
               <div className="col inner-col-50 row alignCenter">
                 <img src={cellImage} alt="user" />
-                <h3 className="headline">Lungenzelle</h3>
+                <h3 className="headline">lung cell</h3>
               </div>
             </div>
             <div className="col col-50">
               <div className="col inner-col-50 row alignCenter">
                 <img src={virusImage} alt="user" />
-                <h3 className="headline">COVIC-19-Virus</h3>
+                <h3 className="headline">SARS-CoV-2</h3>
               </div>
             </div>
           </div>
         </div>
         <div id="simulationContainer">{props.children}</div>
-        <div id="firstSection" className="section">
-          <div className="wrapper">
-            <div className="col col-50">
-              <h3 className="headline">
-                Wie entsteht der Spalt zwischen Allgemeinheit und Experten?
-              </h3>
-              <p>
-                Die Kommunikation von biologischem Fachwissen stößt an seine
-                Grenzen. Da es für fachfremde Personen oft schwer
-                nachzuvollziehen ist, sind Missverständnisse und
-                Informationslücken die Folge. Wir wollen das ändern - mit Hilfe
-                interaktiver Virus-Simulation. Die Kommunikation von
-                biologischem Fachwissen stößt an seine Grenzen. Da es für
-                fachfremde Personen oft schwer nachzuvollziehen ist, sind
-                Missverständnisse und Informationslücken die Folge. Wir wollen
-                das ändern - mit Hilfe interaktiver Virus-Simulation.
-              </p>
-            </div>
-            <div className="col col-50 row">
-              <div className="col inner-col-50">
-                <img src={userImage} alt="user" />
-                <div className="infoBox">
-                  <p>
-                    Die Kommunikation von biologischem Fachwissen stößt an seine
-                    Grenzen. Da es für fachfremde Personen oft schwer
-                    nachzuvollziehen ist, sind Missverständnisse und
-                    Informationslücken die Folge.
-                  </p>
-                </div>
-              </div>
-              <div className="col inner-col-50">
-                <img src={stethoscopeImage} alt="user" />
-                <div className="infoBox">
-                  <p>
-                    Die Kommunikation von biologischem Fachwissen stößt an seine
-                    Grenzen. Da es für fachfremde Personen oft schwer
-                    nachzuvollziehen ist, sind Missverständnisse und
-                    Informationslücken die Folge.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/*<div id="firstSection" className="section">*/}
+        {/*  <div className="wrapper">*/}
+        {/*    <div className="col col-50">*/}
+        {/*      <h3 className="headline">*/}
+        {/*        Wie entsteht der Spalt zwischen Allgemeinheit und Experten?*/}
+        {/*      </h3>*/}
+        {/*      <p>*/}
+        {/*        Die Kommunikation von biologischem Fachwissen stößt an seine*/}
+        {/*        Grenzen. Da es für fachfremde Personen oft schwer*/}
+        {/*        nachzuvollziehen ist, sind Missverständnisse und*/}
+        {/*        Informationslücken die Folge. Wir wollen das ändern - mit Hilfe*/}
+        {/*        interaktiver Virus-Simulation. Die Kommunikation von*/}
+        {/*        biologischem Fachwissen stößt an seine Grenzen. Da es für*/}
+        {/*        fachfremde Personen oft schwer nachzuvollziehen ist, sind*/}
+        {/*        Missverständnisse und Informationslücken die Folge. Wir wollen*/}
+        {/*        das ändern - mit Hilfe interaktiver Virus-Simulation.*/}
+        {/*      </p>*/}
+        {/*    </div>*/}
+        {/*    <div className="col col-50 row">*/}
+        {/*      <div className="col inner-col-50">*/}
+        {/*        <img src={userImage} alt="user" />*/}
+        {/*        <div className="infoBox">*/}
+        {/*          <p>*/}
+        {/*            Die Kommunikation von biologischem Fachwissen stößt an seine*/}
+        {/*            Grenzen. Da es für fachfremde Personen oft schwer*/}
+        {/*            nachzuvollziehen ist, sind Missverständnisse und*/}
+        {/*            Informationslücken die Folge.*/}
+        {/*          </p>*/}
+        {/*        </div>*/}
+        {/*      </div>*/}
+        {/*      <div className="col inner-col-50">*/}
+        {/*        <img src={stethoscopeImage} alt="user" />*/}
+        {/*        <div className="infoBox">*/}
+        {/*          <p>*/}
+        {/*            Die Kommunikation von biologischem Fachwissen stößt an seine*/}
+        {/*            Grenzen. Da es für fachfremde Personen oft schwer*/}
+        {/*            nachzuvollziehen ist, sind Missverständnisse und*/}
+        {/*            Informationslücken die Folge.*/}
+        {/*          </p>*/}
+        {/*        </div>*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
         <hr />
         <div id="secondSection" className="section">
           <div className="wrapper">
-            <h3 className="headline">
-              Welche Lösung bietet die visuelle Simulation von ViruSim?
-            </h3>
+            <h3 className="headline">What does ViruSim offer?</h3>
           </div>
           <div className="wrapper">
             <div className="col col-33 box blue-box">
               <img src={scientistImage} alt="user" />
               <p>
-                Von Virologen und Software-Entwicklern gemeinsam entwickelt.
-                Fachwissen kombiniert mit nutzerfreundlicher Interaktivität.
+                A joint venture of scientists, software developers and designers
+                providing you expert knowledge combined with user-friendly
+                interactivity.
               </p>
             </div>
             <div className="col col-33 box red-box">
               <img src={analysisImage} alt="user" />
               <p>
-                Für jede Altersgruppe geeignetes Fachwissen spielerisch ohne
-                großen Zeitaufwand oder Vorwissen aneignen.
+                Developed for everyone who wants to discover the world of
+                virology in a fun and easy way; independent of age and
+                educational level.
               </p>
             </div>
             <div className="col col-33 box green-box">
               <img src={dataScientistImage} alt="user" />
               <p>
-                Als Open Soure Projekt via API einfach auf die eigene Website
-                einzubinden, um zu einem Teiler des Wissens für alle zu werden.
+                Open source project with API, ready to integrate in any other
+                website.
               </p>
             </div>
           </div>
@@ -158,18 +160,14 @@ const Homepage: React.FC = (props) => {
         <div id="teamSection" className="section">
           <div className="wrapper">
             <div className="col col-33">
-              <h3 className="headline">
-                Das Team hinter der Idee mit dem Visuellen Virus-Simulator
-              </h3>
+              <h3 className="headline">The Team Behind VirusSim</h3>
               <p className="introText">
-                Die Kommunikation von biologischem Fachwissen stößt an seine
-                Grenzen. Da es für fachfremde Personen oft schwer
-                nachzuvollziehen ist, sind Missverständnisse und
-                Informationslücken die Folge. Die Kommunikation von biologischem
-                Fachwissen stößt an seine Grenzen. Da es für fachfremde Personen
-                oft schwer nachzuvollziehen ist, sind Missverständnisse und
-                Informationslücken die Folge. Informationslücken die Folge.
-                Informationslücken die Folge.
+                The team of five was brought together by the European Union's
+                EUvsVirus hackathon. With their multidisciplinary skill set and
+                fast approach they were able to bring Dominik’s vision of an
+                interactive and easy-to-use virus simulator to life. Each one of
+                them hopes this contribution can help fight the current pandemic
+                through education.
               </p>
             </div>
             <div className="col col-33">
@@ -179,7 +177,7 @@ const Homepage: React.FC = (props) => {
                 className="personImage dominik"
               />
               <div className="infoBox">
-                <h4>Dominik, Rolle im Team</h4>
+                <h4>Dominik, Developer</h4>
                 <p>
                   Dominik initiated the project ViruSim because he wanted to
                   take action fighting the current crisis. At the same time, he
@@ -192,7 +190,7 @@ const Homepage: React.FC = (props) => {
             <div className="col col-33">
               <img src={claudiaImage} alt="user" className="personImage" />
               <div className="infoBox">
-                <h4>Claudia, Rolle im Team</h4>
+                <h4>Claudia, Immunologist</h4>
                 <p>
                   Claudia is an entrepreneur holding a PhD in Immunology. She is
                   often startled how little is known about life sciences. With
@@ -206,19 +204,18 @@ const Homepage: React.FC = (props) => {
             <div className="col col-33">
               <img src={benjaminImage} alt="user" className="personImage" />
               <div className="infoBox">
-                <h4>Benjamin, Rolle im Team</h4>
+                <h4>Benjamin, Developer</h4>
                 <p>
-                  Die Kommunikation von biologischem Fachwissen stößt an seine
-                  Grenzen. Da es für fachfremde Personen oft schwer
-                  nachzuvollziehen ist, sind Missverständnisse und
-                  Informationslücken die Folge. Informationslücken die Folge.
+                  Ben is a Frontend/Web Dev joined the team to help teaching
+                  about covid19 and other viruses. He helped developing the
+                  prototype.
                 </p>
               </div>
             </div>
             <div className="col col-33">
               <img src={kathiImage} alt="user" className="personImage kathi" />
               <div className="infoBox">
-                <h4>Kathi, Rolle im Team</h4>
+                <h4>Kathi, Designer</h4>
                 <p>
                   As Designer it brings me joy to set complexe themes inside a
                   good information strategy and make them easy to understand and
@@ -229,7 +226,7 @@ const Homepage: React.FC = (props) => {
             <div className="col col-33">
               <img src={fabianImage} alt="user" className="personImage" />
               <div className="infoBox">
-                <h4>Fabian, Rolle im Team</h4>
+                <h4>Fabian, Developer</h4>
                 <p>
                   The world is fast moving - especially in the times of Corona.
                   As a software developer I would like to contribute in a great

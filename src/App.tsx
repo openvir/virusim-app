@@ -25,7 +25,7 @@ const keyframes: Array<Keyframe> = [
     title: 'Virus SARS-CoV-2 –  What is it made of?',
     mark: 'The Virus',
     description:
-      'Let’s have a look at the main components of this virus.\n\nAt its core we find the genetic information stored in the form of a single-strand RNA. To protect the genome, the RNA strand is bound to a protein and both build a helical nucleocapsid.\n\n' +
+      'At its core we find the genetic information stored in the form of a single-strand RNA. To protect the genome, the RNA strand is bound to a protein and both build a helical nucleocapsid.\n\n' +
       'An outer lipid envelope surrounds the inner nucleocapsid; matrix proteins connect the two structures.\n\n' +
       'On the surface of the virus many crown-like spikes stick out. Those are essential  for entering and infecting the host cell and give the virus family its name: Coronaviridae',
     elements: [
@@ -133,7 +133,7 @@ const keyframes: Array<Keyframe> = [
         y: 353,
         rotation: 236,
         scale: 1,
-        status: 'visible'
+        status: 'visible',
       },
       {
         element: rna,
@@ -141,7 +141,7 @@ const keyframes: Array<Keyframe> = [
         y: 353,
         rotation: 236,
         scale: 1,
-        status: 'visible'
+        status: 'visible',
       },
     ],
   },
@@ -198,7 +198,7 @@ const keyframes: Array<Keyframe> = [
         y: 1,
         rotation: 0,
         scale: 0.5,
-      }, 
+      },
       {
         element: invasion,
         x: 354,
@@ -215,7 +215,7 @@ const keyframes: Array<Keyframe> = [
     mark: 'Invasion',
     description:
       'Now thousands and thousand of more viruses have been made. They leave through the host’s respiratory system through sneezing or coughing – ready to infect new hosts.',
-    elements: [      
+    elements: [
       {
         element: invasion,
         x: 354,
@@ -223,7 +223,7 @@ const keyframes: Array<Keyframe> = [
         rotation: 0,
         scale: 1,
         status: 'visible',
-      }
+      },
     ],
   },
 ]
