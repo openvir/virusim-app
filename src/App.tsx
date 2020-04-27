@@ -45,10 +45,10 @@ const keyframes: Array<Keyframe> = [
       },
       {
         element: scene,
-        x: 1,
-        y: -100,
+        x: -150,
+        y: -250,
         rotation: 0,
-        scale: 1,
+        scale: 0.8,
       },
     ],
   },
@@ -75,10 +75,10 @@ const keyframes: Array<Keyframe> = [
       },
       {
         element: scene,
-        x: 0,
-        y: 0,
+        x: -150,
+        y: -250,
         rotation: 0,
-        scale: 1,
+        scale: 0.8,
       },
     ],
   },
@@ -105,10 +105,10 @@ const keyframes: Array<Keyframe> = [
       },
       {
         element: scene,
-        x: 340,
-        y: -137,
+        x: 79,
+        y: -310,
         rotation: 0,
-        scale: 2,
+        scale: 1.7,
       },
     ],
   },
@@ -167,6 +167,13 @@ const keyframes: Array<Keyframe> = [
         scale: 1,
         status: 'hidden',
       },
+      {
+        element: scene,
+        x: 79,
+        y: -51,
+        rotation: 0,
+        scale: 1.7,
+      },
     ],
   },
   {
@@ -194,10 +201,10 @@ const keyframes: Array<Keyframe> = [
     elements: [
       {
         element: scene,
-        x: 170,
-        y: 1,
+        x: 112,
+        y: -25,
         rotation: 0,
-        scale: 0.5,
+        scale: 0.4,
       },
       {
         element: invasion,
@@ -231,13 +238,16 @@ const keyframes: Array<Keyframe> = [
 type Props = {}
 
 type State = {
-  keyframe: Keyframe
+  keyframe: Keyframe,
+  scale: number,
 }
 
 class App extends Component<Props, State> {
   state: Readonly<State> = {
     keyframe: keyframes[0],
+    scale: 1,
   }
+  
 
   keyframeUpdated = (keyframe: Keyframe) => {
     this.setState({
@@ -247,6 +257,31 @@ class App extends Component<Props, State> {
 
   componentDidMount(): void {
     rna.idle()
+
+    this.stage.wrapper = document.getElementById("stage-wrapper")
+    this.stage.el = document.getElementById("stage")
+    this.stage.width = this.stage.el!.offsetWidth
+    this.stage.height = this.stage.el!.offsetHeight
+    this.updateScale()
+    window.addEventListener("resize", this.updateScale.bind(this))
+  }
+
+  // TODO: move stage stuff to a component
+  //stage = document.getElementById("stage")
+  stage = {
+    el: document.getElementById("stage"),
+    wrapper: document.getElementById("stage-wrapper"),
+    scale: 1,
+    width: 800,
+    height: 600,
+  }
+  
+  updateScale(){
+    this.stage.scale = Math.min(
+      this.stage.wrapper!.offsetWidth / this.stage.width,    
+      this.stage.wrapper!.offsetHeight / this.stage.height
+    );
+    this.setState({ scale: this.stage.scale })
   }
 
   render() {
@@ -254,12 +289,14 @@ class App extends Component<Props, State> {
       <div className="App">
         <Homepage>
           <Logo />
-          <div className="stage">
-            <div className="scene">
-              <Virus />
-              <Rna />
-              <Cell />
-              <Invasion />
+          <div id="stage-wrapper" className="stage-wrapper">
+            <div className="stage" id="stage" style={{ transform: 'translate(-50%, -50%) scale(' + this.state.scale  + ')' }}>
+              <div className="scene">
+                <Virus />
+                <Rna />
+                <Cell />
+                <Invasion />
+              </div>
             </div>
           </div>
           <div className="sidebar">
