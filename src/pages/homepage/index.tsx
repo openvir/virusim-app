@@ -25,7 +25,9 @@ const Homepage: React.FC = (props) => {
         </div>
         <div className="content">
           <h2>Virology Made Easy</h2>
-          <h3>An Interactive Tool for Visualizing Infections</h3>
+          <h3>
+            SARS-CoV-2: An Interactive Tool for Visualizing SARS-CoV-2 Infection
+          </h3>
           <div className="infoBox">
             <p>
               Science is fascinating. Unfortunately, the biological processes in
@@ -66,8 +68,8 @@ const Homepage: React.FC = (props) => {
               <p>
                 The Coronavirus has been able to spread around the world causing
                 a global pandemic. Learn how it multiplies in our bodies by
-                scrolling through the timeline and reading about each step along
-                the way.
+                scrolling through the timeline describing each step along the
+                way.
               </p>
             </div>
           </div>
@@ -199,7 +201,7 @@ const Homepage: React.FC = (props) => {
             <div className="col col-33">
               <img src={claudiaImage} alt="user" className="personImage" />
               <div className="infoBox">
-                <h4>Claudia, Immunologist</h4>
+                <h4>Claudia, Scientist</h4>
                 <p>
                   Claudia is an entrepreneur holding a PhD in Immunology. She is
                   often startled how little is known about life sciences. With
