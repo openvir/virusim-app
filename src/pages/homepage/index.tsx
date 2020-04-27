@@ -2,8 +2,6 @@ import React from 'react'
 import './styles/index.scss'
 
 import { ReactComponent as LogoSVG } from './assets/logo.svg'
-import userImage from './assets/001-user.png'
-import stethoscopeImage from './assets/002-stethoscope.png'
 import scientistImage from './assets/006-scientist.png'
 import dataScientistImage from './assets/005-data-scientist.png'
 import analysisImage from './assets/004-analysis.png'
@@ -15,6 +13,8 @@ import claudiaImage from './assets/Claudia.jpg'
 import benjaminImage from './assets/Benjamin.jpg'
 import kathiImage from './assets/Kathi.jpg'
 import fabianImage from './assets/Fabian.jpg'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Homepage: React.FC = (props) => {
   return (
@@ -37,8 +37,8 @@ const Homepage: React.FC = (props) => {
           </div>
         </div>
 
-        <div id="decorationVirus1"></div>
-        <div id="decorationVirus2"></div>
+        <div id="decorationVirus1" />
+        <div id="decorationVirus2" />
         <div className="scrollDown">
           <button
             onClick={() => {
@@ -49,7 +49,7 @@ const Homepage: React.FC = (props) => {
                 }
               }
             }}
-          ></button>
+          />
         </div>
       </header>
 
@@ -186,7 +186,17 @@ const Homepage: React.FC = (props) => {
                 className="personImage dominik"
               />
               <div className="infoBox">
-                <h4>Dominik, Developer</h4>
+                <h4>
+                  Dominik, Developer
+                  <a
+                    style={{ float: 'right' }}
+                    href="https://www.linkedin.com/in/dominikgrusemann/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </a>
+                </h4>
                 <p>
                   Dominik initiated the project ViruSim because he wanted to
                   take action fighting the current crisis. At the same time, he
@@ -199,7 +209,17 @@ const Homepage: React.FC = (props) => {
             <div className="col col-33">
               <img src={claudiaImage} alt="user" className="personImage" />
               <div className="infoBox">
-                <h4>Claudia, Scientist</h4>
+                <h4>
+                  Claudia, Scientist
+                  <a
+                    style={{ float: 'right' }}
+                    href="https://www.linkedin.com/in/cloudfactor/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </a>
+                </h4>
                 <p>
                   Claudia is an entrepreneur holding a PhD in Immunology. She is
                   often startled how little is known about life sciences. With
@@ -213,7 +233,17 @@ const Homepage: React.FC = (props) => {
             <div className="col col-33">
               <img src={benjaminImage} alt="user" className="personImage" />
               <div className="infoBox">
-                <h4>Benjamin, Developer</h4>
+                <h4>
+                  Benjamin, Developer
+                  <a
+                    style={{ float: 'right' }}
+                    href="https://www.linkedin.com/in/benjamin-albrecht-6607523a/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </a>
+                </h4>
                 <p>
                   Ben is a Frontend/Web Dev joined the team to help teaching
                   about covid19 and other viruses. He helped developing the
@@ -224,7 +254,17 @@ const Homepage: React.FC = (props) => {
             <div className="col col-33">
               <img src={kathiImage} alt="user" className="personImage kathi" />
               <div className="infoBox">
-                <h4>Kathi, Designer</h4>
+                <h4>
+                  Kathi, Designer
+                  <a
+                    style={{ float: 'right' }}
+                    href="https://www.linkedin.com/in/katharina-gollnow-208033b8/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </a>
+                </h4>
                 <p>
                   As Designer it brings me joy to set complexe themes inside a
                   good information strategy and make them easy to understand and
@@ -235,7 +275,17 @@ const Homepage: React.FC = (props) => {
             <div className="col col-33">
               <img src={fabianImage} alt="user" className="personImage" />
               <div className="infoBox">
-                <h4>Fabian, Developer</h4>
+                <h4>
+                  Fabian, Developer
+                  <a
+                    style={{ float: 'right' }}
+                    href="https://www.linkedin.com/in/fabian-wermerskirch-6a520615b/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </a>
+                </h4>
                 <p>
                   The world is fast moving - especially in the times of Corona.
                   As a software developer I would like to contribute in a great
