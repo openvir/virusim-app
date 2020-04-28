@@ -8,6 +8,7 @@ import Invasion from './components/Invasion'
 import Timeline from './components/Timeline'
 import Zoom from './components/Zoom'
 import Scene from './components/Scene'
+import Stage from './components/Stage'
 
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
@@ -239,13 +240,11 @@ type Props = {}
 
 type State = {
   keyframe: Keyframe,
-  scale: number,
 }
 
 class App extends Component<Props, State> {
   state: Readonly<State> = {
     keyframe: keyframes[0],
-    scale: 1,
   }
   
 
@@ -257,31 +256,6 @@ class App extends Component<Props, State> {
 
   componentDidMount(): void {
     rna.idle()
-
-    this.stage.wrapper = document.getElementById("stage-wrapper")
-    this.stage.el = document.getElementById("stage")
-    this.stage.width = this.stage.el!.offsetWidth
-    this.stage.height = this.stage.el!.offsetHeight
-    this.updateScale()
-    window.addEventListener("resize", this.updateScale.bind(this))
-  }
-
-  // TODO: move stage stuff to a component
-  //stage = document.getElementById("stage")
-  stage = {
-    el: document.getElementById("stage"),
-    wrapper: document.getElementById("stage-wrapper"),
-    scale: 1,
-    width: 800,
-    height: 600,
-  }
-  
-  updateScale(){
-    this.stage.scale = Math.min(
-      this.stage.wrapper!.offsetWidth / this.stage.width,    
-      this.stage.wrapper!.offsetHeight / this.stage.height
-    );
-    this.setState({ scale: this.stage.scale })
   }
 
   render() {
@@ -289,16 +263,12 @@ class App extends Component<Props, State> {
       <div className="App">
         <Homepage>
           <Logo />
-          <div id="stage-wrapper" className="stage-wrapper">
-            <div className="stage" id="stage" style={{ transform: 'translate(-50%, -50%) scale(' + this.state.scale  + ')' }}>
-              <div className="scene">
-                <Virus />
-                <Rna />
-                <Cell />
-                <Invasion />
-              </div>
-            </div>
-          </div>
+          <Stage>
+            <Virus />
+            <Rna />
+            <Cell />
+            <Invasion />
+          </Stage>
           <div className="sidebar">
             <div className="info-box">
               <h4 className="subtitle">{this.state.keyframe.title}</h4>
