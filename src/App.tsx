@@ -15,6 +15,9 @@ import Rna from './components/Rna'
 import { RnaAnimations } from './components/RnaAnimations'
 import Homepage from './pages/homepage'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSortDown } from '@fortawesome/free-solid-svg-icons'
+
 const covid19 = new Virus('covid19')
 const rna = new RnaAnimations()
 const scene = new Scene('')
@@ -240,11 +243,13 @@ type Props = {}
 
 type State = {
   keyframe: Keyframe,
+  toggleOpen: boolean
 }
 
 class App extends Component<Props, State> {
   state: Readonly<State> = {
     keyframe: keyframes[0],
+    toggleOpen: false,
   }
   
 
@@ -256,6 +261,10 @@ class App extends Component<Props, State> {
 
   componentDidMount(): void {
     rna.idle()
+  }
+
+  toggleDescription() {
+    this.setState({ toggleOpen: !this.state.toggleOpen, })
   }
 
   render() {
@@ -270,9 +279,12 @@ class App extends Component<Props, State> {
             <Invasion />
           </Stage>
           <div className="sidebar">
-            <div className="info-box">
+            <div className={ 'info-box ' + (this.state.toggleOpen ? 'toggle-open' : '') } onClick={ this.toggleDescription.bind(this) }>
               <h4 className="subtitle">{this.state.keyframe.title}</h4>
-              <p>{this.state.keyframe.description}</p>
+              <div className="description">
+                <p>{this.state.keyframe.description}</p>
+              </div>
+              <span className="mobile drowdown-arrow"><FontAwesomeIcon icon={faSortDown} /></span>
             </div>
           </div>
           <Zoom />

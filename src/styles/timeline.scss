@@ -7,12 +7,16 @@
 
   .controls {
     position: absolute;
-    top: -63px;
+    top: -65px;
     left: calc( 25% + 40px);
     font-size: 30px;
     border: 2px solid $lightbluegreen;
     border-radius: $border-radius;
     background: #c7ebedb4;
+
+    @include mobile {
+      left: $gutter-width;
+    }
   }
 
   .slider-wrapper {
