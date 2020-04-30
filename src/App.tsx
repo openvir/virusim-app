@@ -9,6 +9,7 @@ import Timeline from './components/Timeline'
 import Zoom from './components/Zoom'
 import Scene from './components/Scene'
 import Stage from './components/Stage'
+import Fullscreen from './components/Fullscreen'
 
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
@@ -287,7 +288,11 @@ class App extends Component<Props, State> {
               <span className="mobile drowdown-arrow"><FontAwesomeIcon icon={faSortDown} /></span>
             </div>
           </div>
-          <Zoom />
+          
+          <div className="sidebar-tools">
+            <Fullscreen element={ 'simulationContainer' }/>
+            <Zoom />
+          </div>
           <div className="bottombar">
             <Timeline
               keyframes={keyframes}
