@@ -92,6 +92,7 @@ body {
 
   .sidebar {
     width: 25%;
+    height: 100%;
     margin: $gutter-width;
     position: absolute;
     left: 0;
@@ -106,6 +107,7 @@ body {
 
     @include mobile {
       width: 50%;
+      height: auto;
       max-height: calc(100% - 250px);
       top: 0;
       bottom: auto;
@@ -118,12 +120,6 @@ body {
 
       &.toggle-open {
         height: 100%;
-
-        .info-box {
-          max-height: 100%;
-          max-height: fill-available;
-          overflow-x: auto;
-        }
         
         .description {
           max-height: 900px;
@@ -156,6 +152,9 @@ body {
     border-radius: 5px;
     padding: $gutter-width $gutter-width $gutter-width * 1.5;
     box-shadow: 5px 5px 26px -17px rgba(80, 109, 125, 1);
+    max-height: 100%;
+    max-height: fill-available;
+    overflow-x: auto;
   }
 
   .sidebar-tools {
