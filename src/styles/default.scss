@@ -107,7 +107,6 @@ body {
 
     @include mobile {
       width: 50%;
-      height: auto;
       max-height: calc(100% - 250px);
       top: 0;
       bottom: auto;
@@ -155,6 +154,13 @@ body {
     max-height: 100%;
     max-height: fill-available;
     overflow-x: auto;
+    position: absolute;
+    bottom: 0;
+
+    @include mobile {
+      top: 0;
+      bottom: auto;
+    }
   }
 
   .sidebar-tools {

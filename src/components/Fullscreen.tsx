@@ -7,38 +7,39 @@ type Props = {
     element: string
 }
 
+type State = {
+    supported: boolean,
+}
+
 class Fullscreen extends Component<Props> {
+
+    state: Readonly<State> = {
+        supported: false,
+    }
 
     stage = document.getElementById(this.props.element)
 
     componentDidMount() {
-        this.stage = document.getElementById(this.props.element)
+        if(document.fullscreenEnabled){
+            this.setState({ supported: true })
+            this.stage = document.getElementById(this.props.element)
+        } else {
+            console.log('fullscreen not suported')
+            this.setState({ supported: false })
+        }
     }
 
     enterFullscreen() {
-        if (this.stage) this.enterFullscreenApi(this.stage)
+        if (this.stage) this.stage.requestFullscreen()
     }
 
     exitFullscreen() {
-        this.exitFullscreenApi()
-    }
-
-    // TODO: Fullscreen for or browsers or check if babel.js convert this correctly
-    enterFullscreenApi(element: Element) {
-        if (element.requestFullscreen) {
-            element.requestFullscreen();
-        }
-    }
-
-    exitFullscreenApi() {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        }
+        document.exitFullscreen();
     }
 
     render() {
         return (
-            <div className="fullscreen">
+            <div className="fullscreen" style={{display: this.state.supported ? "inherit" : "none"}}>
                 <span className="enter-fullscreen">
                     <FontAwesomeIcon
                         onClick={this.enterFullscreen.bind(this)}
