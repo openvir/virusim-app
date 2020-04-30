@@ -97,7 +97,7 @@ body {
     left: 0;
     bottom: 120px;
     max-height: calc(100% - 160px);
-    overflow: scroll;
+    overflow: hidden;
     border-radius: $border-radius;
 
     p {
@@ -116,7 +116,15 @@ body {
         transition: max-height 0.2s ease-out;
       }
 
-      .toggle-open {
+      &.toggle-open {
+        height: 100%;
+
+        .info-box {
+          max-height: 100%;
+          max-height: fill-available;
+          overflow-x: auto;
+        }
+        
         .description {
           max-height: 900px;
         }
