@@ -9,14 +9,12 @@ import Timeline from './components/Timeline'
 import Zoom from './components/Zoom'
 import Scene from './components/Scene'
 import Stage from './components/Stage'
+import Sidebar from './components/Sidebar'
 
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
 import { RnaAnimations } from './components/RnaAnimations'
 import Homepage from './pages/homepage'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSortDown } from '@fortawesome/free-solid-svg-icons'
 
 const covid19 = new Virus('covid19')
 const rna = new RnaAnimations()
@@ -243,13 +241,11 @@ type Props = {}
 
 type State = {
   keyframe: Keyframe,
-  toggleOpen: boolean
 }
 
 class App extends Component<Props, State> {
   state: Readonly<State> = {
     keyframe: keyframes[0],
-    toggleOpen: false,
   }
   
 
@@ -263,10 +259,6 @@ class App extends Component<Props, State> {
     rna.idle()
   }
 
-  toggleDescription() {
-    this.setState({ toggleOpen: !this.state.toggleOpen, })
-  }
-
   render() {
     return (
       <div className="App">
@@ -278,15 +270,12 @@ class App extends Component<Props, State> {
             <Cell />
             <Invasion />
           </Stage>
-          <div className="sidebar">
-            <div className={ 'info-box ' + (this.state.toggleOpen ? 'toggle-open' : '') } onClick={ this.toggleDescription.bind(this) }>
+          <Sidebar>
               <h4 className="subtitle">{this.state.keyframe.title}</h4>
               <div className="description">
                 <p>{this.state.keyframe.description}</p>
               </div>
-              <span className="mobile drowdown-arrow"><FontAwesomeIcon icon={faSortDown} /></span>
-            </div>
-          </div>
+          </Sidebar>
           <Zoom />
           <div className="bottombar">
             <Timeline
