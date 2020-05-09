@@ -47,7 +47,9 @@ const Homepage: React.FC = (props) => {
               if (document) {
                 const x = document.getElementById('simulationContainer')
                 if (x) {
-                  x.scrollIntoView()
+                  x.scrollIntoView({
+                    behavior: 'smooth',
+                  })
                 }
               }
             }}
