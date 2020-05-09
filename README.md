@@ -25,8 +25,8 @@ A live version of the software can be found at [https://www.virusim.org](https:/
 To start development and run the project locally, run
 
 ```
-yarn install
-yarn dev
+npm install
+npm start
 ```
 
 Then open [http://localhost:8000](http://localhost:8000) in your web browser.
