@@ -63,14 +63,14 @@ const Homepage: React.FC = (props) => {
 
       <main>
         <div id="thirdSection" className="section">
-          <div className="wrapper">
-            <div className="col col-50">
+          <div className="wrapper wrapper-culumn-m">
+            <div className="col col-50 col-100-m">
               <h3 className="headline">
                 Start now and discover how SARS-CoV-2 infects the cells deep
                 down in the lung
               </h3>
             </div>
-            <div className="col col-50">
+            <div className="col col-50 col-100-m">
               <p>
                 The Coronavirus has been able to spread around the world causing
                 a global pandemic. Learn how it multiplies in our bodies by
@@ -147,8 +147,8 @@ const Homepage: React.FC = (props) => {
           <div className="wrapper">
             <h3 className="headline">What does ViruSim offer?</h3>
           </div>
-          <div className="wrapper">
-            <div className="col col-33 box blue-box">
+          <div className="wrapper wrapper-culumn-m">
+            <div className="col col-33 col-100-m box blue-box">
               <img src={scientistImage} alt="user" />
               <p>
                 A joint venture of scientists, software developers and designers
@@ -156,7 +156,7 @@ const Homepage: React.FC = (props) => {
                 interactivity.
               </p>
             </div>
-            <div className="col col-33 box red-box">
+            <div className="col col-33 col-100-m box red-box">
               <img src={analysisImage} alt="user" />
               <p>
                 Developed for everyone who wants to discover the world of
@@ -164,7 +164,7 @@ const Homepage: React.FC = (props) => {
                 educational level.
               </p>
             </div>
-            <div className="col col-33 box green-box">
+            <div className="col col-33 col-100-m box green-box">
               <img src={dataScientistImage} alt="user" />
               <p>
                 Open source project with API, ready to integrate in any other
@@ -175,8 +175,8 @@ const Homepage: React.FC = (props) => {
         </div>
         <hr />
         <div id="teamSection" className="section">
-          <div className="wrapper">
-            <div className="col col-33">
+          <div className="wrapper wrapper-culumn-m">
+            <div className="col col-33 col-100-m">
               <h3 className="headline">The Team Behind VirusSim</h3>
               <p className="introText">
                 The team of five was brought together by the European Union's
@@ -187,7 +187,7 @@ const Homepage: React.FC = (props) => {
                 through education.
               </p>
             </div>
-            <div className="col col-33">
+            <div className="col col-33 col-100-m">
               <img
                 src={dominikImage}
                 alt="user"
@@ -214,7 +214,7 @@ const Homepage: React.FC = (props) => {
                 </p>
               </div>
             </div>
-            <div className="col col-33">
+            <div className="col col-33 col-100-m">
               <img src={claudiaImage} alt="user" className="personImage" />
               <div className="infoBox">
                 <h4>
@@ -237,8 +237,8 @@ const Homepage: React.FC = (props) => {
               </div>
             </div>
           </div>
-          <div className="wrapper">
-            <div className="col col-33">
+          <div className="wrapper wrapper-culumn-m">
+            <div className="col col-33 col-100-m">
               <img src={benjaminImage} alt="user" className="personImage" />
               <div className="infoBox">
                 <h4>
@@ -259,7 +259,7 @@ const Homepage: React.FC = (props) => {
                 </p>
               </div>
             </div>
-            <div className="col col-33">
+            <div className="col col-33 col-100-m">
               <img src={kathiImage} alt="user" className="personImage kathi" />
               <div className="infoBox">
                 <h4>
@@ -280,7 +280,7 @@ const Homepage: React.FC = (props) => {
                 </p>
               </div>
             </div>
-            <div className="col col-33">
+            <div className="col col-33 col-100-m">
               <img src={fabianImage} alt="user" className="personImage" />
               <div className="infoBox">
                 <h4>

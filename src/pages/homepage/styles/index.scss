@@ -1,10 +1,40 @@
+@import './../../../styles/normalize.scss';
+@import './../../../styles/variables.scss';
+@import './../../../styles/mixins.scss';
+
 #banner {
+  position: relative;
   height: 100vh;
   background-image: url('../assets/headerimage_@2x.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: 0 -190px;
+  padding-top: 23vh;
+  min-height: 500px;
+
+  @include desktop-up {
+    padding-top: 130px;
+    background-position: 0;
+
+    @include portrait {
+      background-position: 0 -130px;
+    }
+  }
+
+  @include tablet {
+    padding-top: 17vh;
+    background-position: -30px -190px;
+  }
+
+  @include mobile {
+    padding-top: 95px;
+    background-position: 0px -255px;
+  }
 
   .logoContainer {
+    position: absolute;
+    top: 0;
+    left:0;
     display: inline-block;
     padding: 10px 20px;
     background: white;
@@ -15,14 +45,29 @@
   }
 
   .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 20px;
-    height: calc(100% - 120px);
-    @media (min-width: 1200px) {
-      margin-left: 50%;
-      margin-right: 120px;
+    position: absolute;
+    bottom: 17vh;
+    left: 0;
+    z-index: 110;
+    padding: 0 20px;    
+
+    @include desktop-up {
+      @include landscape {
+        margin-left: 50%;
+        margin-right: 120px;
+        padding: 0;
+        bottom: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100% - 120px);
+      }
+    }
+
+    @include mobile-small {
+      position: relative;
+      bottom: auto;
     }
 
     h2 {
@@ -31,7 +76,18 @@
     }
 
     .infoBox {
-      margin-top: 12vh;
+      margin-top: 40px;
+
+      @include mobile {
+        p {
+          max-height: 35vh;
+          overflow: auto;
+        }
+      }
+
+      @include big-desktop-up {
+        margin-top: 12vh;
+      }
     }
   }
 
@@ -39,27 +95,38 @@
     display: block;
     background-image: url('../assets/virus@2x.png');
     position: absolute;
-    top: 50%;
-    left: 20%;
+    bottom: 5vh;
+    left: 22vw;
     width: 24vw;
     height: 24vw;
     background-size: contain;
+    z-index: 100;
+
+    @include tablet {
+      top: 75%;
+      left: 10%;
+    }
+
   }
 
   #decorationVirus2 {
     display: block;
     background-image: url('../assets/virus-1@2x.png');
     position: absolute;
-    top: 7%;
+    top: 0;
     right: 10%;
     width: 10vw;
     height: 10vw;
     background-size: contain;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   .scrollDown {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -96,11 +163,39 @@
 h2 {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 72px;
+  font-size: 50px;
+
+  @media (min-height: 800px) and  (min-width: $screen-lg) {
+    font-size: 72px;
+  }
+
+  @include tablet {
+    font-size: 50px;
+  }
+
+  @include mobile {
+    font-size: 32px;
+  }
+
+  @include mobile-small {
+    font-size: 28px;
+  }
 }
 
 h3 {
   font-size: 34px;
+
+  @include tablet {
+    font-size: 25px;
+  }
+
+  @include mobile {
+    font-size: 23px;
+  }
+
+  @include mobile-small {
+    font-size: 18px;
+  }
 }
 
 p {
@@ -124,14 +219,28 @@ main {
     align-items: center;
     padding: 150px 20px;
 
+    @include mobile {
+      padding: 60px 20px;
+    }
+
     .headline {
       margin-bottom: 40px;
+
+      @include mobile {
+        margin-bottom: 20px;
+      }
     }
 
     .wrapper {
       display: flex;
       width: 100%;
       max-width: 1400px;
+
+      &.wrapper-culumn-m {
+        @include mobile {
+          flex-direction: column;
+        }
+      }
 
       .col {
         display: flex;
@@ -153,12 +262,28 @@ main {
       .col-50 {
         width: calc(50% - 60px);
 
+        &.col-100-m {
+          @include mobile {
+            width: 100%;
+          }
+        }
+
         &:first-child {
           margin-right: 60px;
+
+          @include mobile {
+            margin-right: 0;
+          }
         }
 
         &:last-child {
           margin-left: 60px;
+        
+          &.col-100-m {
+            @include mobile {
+              margin-left: 0;
+            }
+          }
         }
       }
 
@@ -177,12 +302,31 @@ main {
       .col-33 {
         width: calc(33% - 10px);
 
+        &.col-100-m {
+          @include mobile {
+            width: 100%;
+            margin-bottom: 30px;
+          }
+        }
+
         &:first-child {
           margin-right: 15px;
+
+          &.col-100-m {
+            @include mobile {
+              margin-right: 0;
+            }
+          }
         }
 
         &:last-child {
           margin-left: 15px;
+
+          &.col-100-m {
+            @include mobile {
+              margin-left: 0;
+            }
+          }
         }
       }
     }
@@ -193,14 +337,13 @@ main {
     }
 
     img {
-      width: 100px;
-      height: auto;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 25px;
     }
   }
 }
+
 
 hr {
   background: white;
@@ -219,7 +362,9 @@ hr {
   padding: 80px 20px;
 
   .headline {
-    margin-bottom: 0px;
+    @include mobile-up {
+      margin-bottom: 0px;
+    }
   }
 }
 
@@ -230,6 +375,10 @@ hr {
     margin-bottom: 100px;
     margin-left: auto;
     margin-right: auto;
+
+    @include mobile {
+      margin-bottom: 70px;
+    }
   }
 
   .box {
@@ -276,9 +425,14 @@ hr {
 
   img {
     width: 180px;
-    height: auto;
-    margin: 0px 30px 0px 0px;
+    max-width: 50%;
+    margin: 0 30px 20px 0;
+
+    @include mobile {
+      margin-right: 10px;
+    }
   }
+
 }
 
 #teamSection {
