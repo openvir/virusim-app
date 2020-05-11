@@ -18,6 +18,10 @@ import fabianImage from './assets/Fabian.jpg'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+// smooth scroll for all browsers
+import smoothscroll from 'smoothscroll-polyfill'
+smoothscroll.polyfill()
+
 const Homepage: React.FC = (props) => {
   return (
     <>
