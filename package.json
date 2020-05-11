@@ -27,6 +27,7 @@
     "react-dom": "^16.13.1",
     "react-mailchimp-subscribe": "^2.1.0",
     "react-scripts": "3.4.1",
+    "smoothscroll-polyfill": "^0.4.4",
     "typescript": "^3.7.5"
   },
   "scripts": {
