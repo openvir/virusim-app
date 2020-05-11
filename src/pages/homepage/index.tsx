@@ -1,5 +1,4 @@
 import React from 'react'
-import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
 import './styles/index.scss'
 
@@ -17,6 +16,8 @@ import kathiImage from './assets/Kathi.jpg'
 import fabianImage from './assets/Fabian.jpg'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import Newsletter from './components/Newsletter'
 
 // smooth scroll for all browsers
 import smoothscroll from 'smoothscroll-polyfill'
@@ -304,17 +305,7 @@ const Homepage: React.FC = (props) => {
             </div>
           </div>
         </div>
-        <div id="mailchimpSection" className="section">
-          <h3>Subscribe to our newsletter</h3>
-          <p>Receive updates about ViruSim and research about SARS-CoV-2.</p>
-          <div className="mailchimpForm">
-            <MailchimpSubscribe
-              url={
-                'https://virusim.us8.list-manage.com/subscribe/post?u=aaf871f49da627217326f2630&amp;id=606669db37'
-              }
-            />
-          </div>
-        </div>
+        <Newsletter />
       </main>
     </>
   )

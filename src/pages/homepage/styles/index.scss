@@ -34,7 +34,7 @@
   .logoContainer {
     position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     display: inline-block;
     padding: 10px 20px;
     background: white;
@@ -49,7 +49,7 @@
     bottom: 17vh;
     left: 0;
     z-index: 110;
-    padding: 0 20px;    
+    padding: 0 20px;
 
     @include desktop-up {
       @include landscape {
@@ -106,7 +106,6 @@
       top: 75%;
       left: 10%;
     }
-
   }
 
   #decorationVirus2 {
@@ -165,7 +164,7 @@ h2 {
   font-weight: bold;
   font-size: 50px;
 
-  @media (min-height: 800px) and  (min-width: $screen-lg) {
+  @media (min-height: 800px) and (min-width: $screen-lg) {
     font-size: 72px;
   }
 
@@ -278,7 +277,7 @@ main {
 
         &:last-child {
           margin-left: 60px;
-        
+
           &.col-100-m {
             @include mobile {
               margin-left: 0;
@@ -343,7 +342,6 @@ main {
     }
   }
 }
-
 
 hr {
   background: white;
@@ -432,7 +430,6 @@ hr {
       margin-right: 10px;
     }
   }
-
 }
 
 #teamSection {
@@ -472,22 +469,43 @@ hr {
 }
 
 #mailchimpSection {
+  text-align: center;
+
+  .hide {
+    display: none;
+  }
+
   .mailchimpForm {
     margin-top: 50px;
+  }
+
+  .form-field {
+    display: inline-block;
+    position: relative;
+  }
+
+  .error-message {
+    color: $red;
+    position: absolute;
+    font-size: 14px !important;
   }
 
   input {
     font-size: 20px;
     width: 300px;
     border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    color: $primaryColor;
   }
 
   button {
     margin: 30px;
-    background-color: #EA6E5D;
+    background-color: $red;
     border-radius: 28px;
+    border: none;
     cursor: pointer;
-    color: #ffffff;
+    color: $white;
     font-size: 17px;
     padding: 10px 31px;
   }
