@@ -1,0 +1,18 @@
+.fullscreen {
+//   .enter-fullscreen {
+//   }
+  .exit-fullscreen {
+    display: none !important;
+  }
+}
+
+*:fullscreen {
+  .fullscreen {
+    .enter-fullscreen {
+      display: none !important;
+    }
+    .exit-fullscreen {
+      display: block !important;
+    }
+  }
+}

@@ -1,44 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![CircleCI](https://circleci.com/gh/openvir/virusim.svg?style=svg)](https://circleci.com/gh/openvir/virusim)
+[![TypeScript](https://badges.frapsoft.com/typescript/code/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
 
-## Available Scripts
+<img src="https://github.com/openvir/virusim/blob/master/docs/logo/logo.png" width="400">
 
-In the project directory, you can run:
+# ViruSim
 
-### `npm start`
+Fighting SARS-CoV-2 with education.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We're actively looking for contributors. Please have a look at the [Contributing section](#Contributing).
+---
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Vision
 
-### `npm test`
+ViruSim will be a configurable simulation of a viral infection on a cellular level. The software is intended to be used inside the browser mainly for educational purposes (for example using it in online courses about viruses, immunology and viral infections). Therefore nice visuals will be a main part of this project. This project is open-source and non-profit. While the primary focus for this project will most probably be educational purposes further (scientific) applications might be possible in the future.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting started
 
-### `npm run build`
+### Live version
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A live version of the software can be found at [https://www.virusim.org](https://www.virusim.org).
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Running locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To start development and run the project locally, run
 
-### `npm run eject`
+```
+npm install
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Then open [http://localhost:8000](http://localhost:8000) in your web browser.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Learning about viruses
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+A very good starting point is the following online course:
+- [Viruses & How to Beat Them: Cells, Immunity, Vaccines](https://courses.edx.org/courses/course-v1:IsraelX+Virus101x+2T2018/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Deployment
 
-## Learn More
+The `master` branch is automatically deployed to [https://www.virusim.org](https://www.virusim.org) after passing the continuous integration on CirlceCI at [https://circleci.com/gh/dominik1001/virusim](https://circleci.com/gh/dominik1001/virusim).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Tech Stack
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- TypeScript
+- Webpack
+- [Babylon.js](https://www.babylonjs.com/)
+
+## Contributing
+
+### Who are you looking for?
+
+Currently we're looking for enthusiastic people who are willing to join this open-source and non-profit project. Concretely we're looking for:
+- JavaScript/TypeScript developers ideally with a background in 2D/3D rendering
+- Biologists/Immunologists/Virologists/MDs to guide the project and to input useful requirements and domain-specific knowledge ideally with an educational background
+- 2D/3D Designers
+
+### How do I contribute?
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.

@@ -7,12 +7,16 @@
 
   .controls {
     position: absolute;
-    top: -60px;
-    left: 20px;
+    top: -65px;
+    left: calc(25% + 40px);
     font-size: 30px;
     border: 2px solid $lightbluegreen;
     border-radius: $border-radius;
     background: #c7ebedb4;
+
+    @include mobile {
+      left: $gutter-width;
+    }
   }
 
   .slider-wrapper {
@@ -20,7 +24,8 @@
     padding: $gutter-width;
     display: inline-block;
 
-    .rc-slider-rail, .rc-slider-track {
+    .rc-slider-rail,
+    .rc-slider-track {
       height: 2px;
       border-radius: 0;
     }
@@ -43,7 +48,7 @@
 
     .rc-slider-dot {
       border: none;
-      border-radius: 0;;
+      border-radius: 0;
       background: $lightbluegreen;
       width: 2px;
       height: 25px;
@@ -63,7 +68,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
 
-      &:hover{
+      &:hover {
         overflow: visible;
         background: #fff;
       }
@@ -72,8 +77,6 @@
     .rc-slider-mark-text-active {
       color: $primaryColor;
     }
-
-
   }
 
   button {
@@ -94,7 +97,7 @@
       cursor: default;
       opacity: 0.5;
 
-      &:hover{
+      &:hover {
         color: $primaryColor;
       }
     }

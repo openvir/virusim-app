@@ -37,7 +37,7 @@ class Timeline extends Component<Props, State> {
   keyframesToMarks() {
     const marks: any = {}
     for (const keyframe of this.props.keyframes) {
-      marks[keyframe.seconds.toString()] = keyframe.title
+      marks[keyframe.seconds.toString()] = keyframe.mark
     }
     return marks
   }
@@ -65,6 +65,7 @@ class Timeline extends Component<Props, State> {
               element.x,
               element.y,
               element.rotation || 0,
+              element.scale || 1,
               nextFrame.seconds - currentFrame.seconds
             )
           }
@@ -86,6 +87,7 @@ class Timeline extends Component<Props, State> {
                 element.x,
                 element.y,
                 element.rotation || 0,
+                element.scale || 1,
                 1
               )
             }
@@ -105,6 +107,7 @@ class Timeline extends Component<Props, State> {
                 element.x,
                 element.y,
                 element.rotation || 0,
+                element.scale || 1,
                 1
               )
             }
@@ -152,7 +155,7 @@ class Timeline extends Component<Props, State> {
         this.stepUpdated(this.state.step)
         this.interval = setInterval(
           () => this.setProgress(this.state.progress + 1),
-          100
+          1500
         )
       }
     )
@@ -206,6 +209,7 @@ class Timeline extends Component<Props, State> {
             value={this.state.progress}
             marks={this.keyframesToMarks()}
             onChange={this.onSliderChange}
+            max={90}
           />
         </div>
       </div>

@@ -1,0 +1,512 @@
+@import './../../../styles/normalize.scss';
+@import './../../../styles/variables.scss';
+@import './../../../styles/mixins.scss';
+
+#banner {
+  position: relative;
+  height: 100vh;
+  background-image: url('../assets/headerimage_@2x.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 -190px;
+  padding-top: 23vh;
+  min-height: 500px;
+
+  @include desktop-up {
+    padding-top: 130px;
+    background-position: 0;
+
+    @include portrait {
+      background-position: 0 -130px;
+    }
+  }
+
+  @include tablet {
+    padding-top: 17vh;
+    background-position: -30px -190px;
+  }
+
+  @include mobile {
+    padding-top: 95px;
+    background-position: 0px -255px;
+  }
+
+  .logoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    padding: 10px 20px;
+    background: white;
+
+    .homeLogo {
+      margin: 0;
+    }
+  }
+
+  .content {
+    position: absolute;
+    bottom: 17vh;
+    left: 0;
+    z-index: 110;
+    padding: 0 20px;
+
+    @include desktop-up {
+      @include landscape {
+        margin-left: 50%;
+        margin-right: 120px;
+        padding: 0;
+        bottom: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100% - 120px);
+      }
+    }
+
+    @include mobile-small {
+      position: relative;
+      bottom: auto;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      max-width: 800px;
+    }
+
+    .infoBox {
+      margin-top: 40px;
+
+      @include mobile {
+        p {
+          max-height: 35vh;
+          overflow: auto;
+        }
+      }
+
+      @include big-desktop-up {
+        margin-top: 12vh;
+      }
+    }
+  }
+
+  #decorationVirus1 {
+    display: block;
+    background-image: url('../assets/virus@2x.png');
+    position: absolute;
+    bottom: 5vh;
+    left: 22vw;
+    width: 24vw;
+    height: 24vw;
+    background-size: contain;
+    z-index: 100;
+
+    @include tablet {
+      top: 75%;
+      left: 10%;
+    }
+  }
+
+  #decorationVirus2 {
+    display: block;
+    background-image: url('../assets/virus-1@2x.png');
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 10vw;
+    height: 10vw;
+    background-size: contain;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .scrollDown {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    button {
+      height: 85px;
+      width: 78px;
+      background-color: unset;
+      background-image: url('../assets/scroll-down.png');
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+
+      &:after {
+        content: 'Start discovering';
+        display: block;
+        position: relative;
+        left: 130%;
+        height: 100%;
+        width: 70px;
+        font-size: 18px;
+        color: #506d7d;
+      }
+
+      &:focus {
+        outline: unset;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 50px;
+
+  @media (min-height: 800px) and (min-width: $screen-lg) {
+    font-size: 72px;
+  }
+
+  @include tablet {
+    font-size: 50px;
+  }
+
+  @include mobile {
+    font-size: 32px;
+  }
+
+  @include mobile-small {
+    font-size: 28px;
+  }
+}
+
+h3 {
+  font-size: 34px;
+
+  @include tablet {
+    font-size: 25px;
+  }
+
+  @include mobile {
+    font-size: 23px;
+  }
+
+  @include mobile-small {
+    font-size: 18px;
+  }
+}
+
+p {
+  font-size: 18px !important;
+  line-height: 24px !important;
+}
+
+.infoBox {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  box-shadow: 4px 4px 10px #506d7d;
+  box-shadow: 4px 4px 10px #506d7d47;
+}
+
+main {
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 20px;
+
+    @include mobile {
+      padding: 60px 20px;
+    }
+
+    .headline {
+      margin-bottom: 40px;
+
+      @include mobile {
+        margin-bottom: 20px;
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      width: 100%;
+      max-width: 1400px;
+
+      &.wrapper-culumn-m {
+        @include mobile {
+          flex-direction: column;
+        }
+      }
+
+      .col {
+        display: flex;
+        flex-direction: column;
+
+        &.row {
+          flex-direction: row;
+        }
+
+        &.alignCenter {
+          align-items: center;
+        }
+      }
+
+      .col-100 {
+        width: 100%;
+      }
+
+      .col-50 {
+        width: calc(50% - 60px);
+
+        &.col-100-m {
+          @include mobile {
+            width: 100%;
+          }
+        }
+
+        &:first-child {
+          margin-right: 60px;
+
+          @include mobile {
+            margin-right: 0;
+          }
+        }
+
+        &:last-child {
+          margin-left: 60px;
+
+          &.col-100-m {
+            @include mobile {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+
+      .inner-col-50 {
+        width: calc(100% - 10px);
+
+        &:first-child {
+          margin-right: 10px;
+        }
+
+        &:last-child {
+          margin-left: 10px;
+        }
+      }
+
+      .col-33 {
+        width: calc(33% - 10px);
+
+        &.col-100-m {
+          @include mobile {
+            width: 100%;
+            margin-bottom: 30px;
+          }
+        }
+
+        &:first-child {
+          margin-right: 15px;
+
+          &.col-100-m {
+            @include mobile {
+              margin-right: 0;
+            }
+          }
+        }
+
+        &:last-child {
+          margin-left: 15px;
+
+          &.col-100-m {
+            @include mobile {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    h3 {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+hr {
+  background: white;
+  margin: 0;
+}
+
+#firstSection,
+#secondSection,
+#thirdSection,
+#fourthSection {
+  background: white;
+}
+
+#thirdSection,
+#fourthSection {
+  padding: 80px 20px;
+
+  .headline {
+    @include mobile-up {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+#secondSection {
+  .headline {
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mobile {
+      margin-bottom: 70px;
+    }
+  }
+
+  .box {
+    padding: 30px 30px 50px 30px;
+    border-radius: 10px;
+
+    img {
+      margin: 50px auto;
+    }
+
+    text-align: center;
+
+    p {
+      font-size: 24px !important;
+      line-height: 28px !important;
+    }
+  }
+
+  .blue-box {
+    background: #95c9cc;
+  }
+
+  .red-box {
+    background: #ffa371;
+  }
+
+  .green-box {
+    background: #a7d669;
+  }
+}
+
+#simulationContainer {
+  position: relative;
+  height: 100vh;
+}
+
+#fourthSection {
+  padding: 30px 20px;
+
+  h3 {
+    font-weight: normal;
+    text-transform: unset;
+  }
+
+  img {
+    width: 180px;
+    max-width: 50%;
+    margin: 0 30px 20px 0;
+
+    @include mobile {
+      margin-right: 10px;
+    }
+  }
+}
+
+#teamSection {
+  background-color: #f1f3f5;
+
+  .wrapper:first-child {
+    margin-bottom: 100px;
+  }
+
+  .introText {
+    margin-right: 30px;
+  }
+
+  .personImage {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px #506d7d;
+    box-shadow: 4px 4px 10px #506d7d47;
+    object-fit: cover;
+
+    &.kathi {
+      object-position: 20% 20%;
+    }
+
+    &.dominik {
+      object-position: top;
+    }
+  }
+
+  h4 {
+    font-weight: bold;
+    font-size: 21px;
+    margin-bottom: 15px;
+  }
+}
+
+#mailchimpSection {
+  text-align: center;
+
+  .hide {
+    display: none;
+  }
+
+  .mailchimpForm {
+    margin-top: 50px;
+  }
+
+  .form-field {
+    display: inline-block;
+    position: relative;
+  }
+
+  .error-message {
+    color: $red;
+    position: absolute;
+    font-size: 14px !important;
+  }
+
+  input {
+    font-size: 20px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    color: $primaryColor;
+  }
+
+  button {
+    margin: 30px;
+    background-color: $red;
+    border-radius: 28px;
+    border: none;
+    cursor: pointer;
+    color: $white;
+    font-size: 17px;
+    padding: 10px 31px;
+  }
+}

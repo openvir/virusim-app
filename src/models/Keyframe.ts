@@ -9,10 +9,12 @@ type Element = {
   x: number
   y: number
   rotation: number | undefined
+  scale: number | 1
   status?: string
 }
 
 export type Keyframe = {
+  mark: string
   seconds: number
   title: string
   description: string

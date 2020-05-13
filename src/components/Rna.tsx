@@ -8,7 +8,7 @@ class Rna extends Component {
     return (
       <div
         className="rnaWrapper"
-        style={{ zIndex: 1000, width: '30%', height: '30%' }}
+        style={{ zIndex: 1000, width: '140px', height: '140px' }}
       >
         <RnaSVG className="rna" />
       </div>
