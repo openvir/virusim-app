@@ -243,14 +243,13 @@ const keyframes: Array<Keyframe> = [
 type Props = {}
 
 type State = {
-  keyframe: Keyframe,
+  keyframe: Keyframe
 }
 
 class App extends Component<Props, State> {
   state: Readonly<State> = {
     keyframe: keyframes[0],
   }
-
 
   keyframeUpdated = (keyframe: Keyframe) => {
     this.setState({
@@ -275,14 +274,14 @@ class App extends Component<Props, State> {
             <Invasion />
           </Stage>
           <Sidebar>
-              <h4 className="subtitle">{this.state.keyframe.title}</h4>
-              <div className="description">
-                <p>{this.state.keyframe.description}</p>
-              </div>
+            <h4 className="subtitle">{this.state.keyframe.title}</h4>
+            <div className="description">
+              <p>{this.state.keyframe.description}</p>
+            </div>
           </Sidebar>
           <div className="sidebar-tools">
-              <Fullscreen element={ 'simulationContainer' }/>
-              <Zoom />
+            <Fullscreen element={'simulationContainer'} />
+            <Zoom />
           </div>
           <div className="bottombar">
             <Timeline
