@@ -22,6 +22,13 @@ export class RibosomeAnimations implements VisualElement {
   replicate() {
     const rnaPath = anime.path('.rna-path')
 
+    // move ribosome to rna
+    anime({
+      targets: '.ribosome',
+      left: '278px',
+      top: '274px',
+    })
+
     this.replicationAnimation = anime({
       targets: '.ribosome',
       translateX: rnaPath('x'),
