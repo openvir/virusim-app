@@ -2,6 +2,24 @@ import anime from 'animejs'
 
 import { VisualElement } from '../../models/Keyframe'
 
+function followPath(path: string) {
+  const rnaPath = anime.path(path)
+  return anime({
+    targets: '.ribosome',
+    translateX: rnaPath('x'),
+    translateY: rnaPath('y'),
+    rotate: rnaPath('angle'),
+    easing: () => {
+      return 'linear'
+    },
+    duration: 10000,
+    loop: false,
+    complete: () => {
+      console.log('done')
+    },
+  })
+}
+
 export class RibosomeAnimations implements VisualElement {
   replicationAnimation: anime.AnimeInstance | null = null
 
@@ -30,21 +48,6 @@ export class RibosomeAnimations implements VisualElement {
 
   replicate() {
     this.moveRibosomeToRna()
-
-    const rnaPath = anime.path('.rna-path')
-    this.replicationAnimation = anime({
-      targets: '.ribosome',
-      translateX: rnaPath('x'),
-      translateY: rnaPath('y'),
-      rotate: rnaPath('angle'),
-      easing: () => {
-        return 'linear'
-      },
-      duration: 10000,
-      loop: false,
-      complete: () => {
-        console.log('done')
-      },
-    })
+    this.replicationAnimation = followPath('.rna-path')
   }
 }
