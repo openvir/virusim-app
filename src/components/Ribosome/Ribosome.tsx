@@ -4,6 +4,6 @@ import './Ribosome.scss'
 
 export class Ribosome extends Component {
   render() {
-    return <div className="square blue" />
+    return <div className="ribosome" />
   }
 }

@@ -1,12 +1,4 @@
-.square {
-  position: absolute;
-}
-
-.square.blue, .box.blue {
-  background: blue;
-}
-
-.box, .square {
+.ribosome {
   pointer-events: none;
   background-color: black;
   margin: 0px;
