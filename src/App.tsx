@@ -14,6 +14,7 @@ import Sidebar from './components/Sidebar'
 
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
+import Ribosome from './components/Ribosome'
 import { RnaAnimations } from './components/RnaAnimations'
 import Homepage from './pages/homepage'
 
@@ -270,6 +271,7 @@ class App extends Component<Props, State> {
             <Virus />
             <Rna />
             <Cell />
+            <Ribosome />
             <Invasion />
           </Stage>
           <Sidebar>

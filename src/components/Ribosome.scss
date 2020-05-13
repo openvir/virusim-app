@@ -1,0 +1,20 @@
+.square {
+  position: absolute;
+}
+
+.square.blue, .box.blue {
+  background: blue;
+}
+
+.box, .square {
+  pointer-events: none;
+  background-color: black;
+  margin: 0px;
+  display: inline-block;
+  top: 0px;
+  left: 0px;
+  opacity: 0.6;
+  border-radius: 5px;
+  width: 20px !important;
+  height: 20px !important;
+}
