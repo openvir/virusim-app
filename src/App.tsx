@@ -14,7 +14,7 @@ import Sidebar from './components/Sidebar'
 
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
-import { Ribosome, RibosomeAnimations } from './components/'
+import { RibosomeAnimations } from './components/'
 import { RnaAnimations } from './components/RnaAnimations'
 import Homepage from './pages/homepage'
 
@@ -163,7 +163,7 @@ const keyframes: Array<Keyframe> = [
         y: 274,
         rotation: 236,
         scale: 1,
-        status: 'stopIdle',
+        // status: 'stopIdle',
       },
       {
         element: covid19,
@@ -275,7 +275,7 @@ class App extends Component<Props, State> {
             <Virus />
             <Rna />
             <Cell />
-            <Ribosome />
+            {/*<Ribosome />*/}
             <Invasion />
           </Stage>
           <Sidebar>
