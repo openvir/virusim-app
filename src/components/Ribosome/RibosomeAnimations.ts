@@ -19,18 +19,19 @@ export class RibosomeAnimations implements VisualElement {
     return '.'
   }
 
-  replicate() {
-    const rnaPath = anime.path('.rna-path')
-
+  moveRibosomeToRna() {
     const offset = 30
-
-    // move ribosome to rna
     anime({
       targets: '.ribosome',
       left: `${278 - offset}px`,
       top: `${274 - offset}px`,
     })
+  }
 
+  replicate() {
+    this.moveRibosomeToRna()
+
+    const rnaPath = anime.path('.rna-path')
     this.replicationAnimation = anime({
       targets: '.ribosome',
       translateX: rnaPath('x'),
@@ -40,7 +41,10 @@ export class RibosomeAnimations implements VisualElement {
         return 'linear'
       },
       duration: 10000,
-      loop: true,
+      loop: false,
+      complete: () => {
+        console.log('done')
+      },
     })
   }
 }
