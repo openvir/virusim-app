@@ -2,7 +2,7 @@ import anime from 'animejs'
 
 import { VisualElement } from '../../models/Keyframe'
 
-function followPath(path: string) {
+function followPath(path: string, onComplete: Function) {
   const rnaPath = anime.path(path)
   return anime({
     targets: '.ribosome',
@@ -15,7 +15,7 @@ function followPath(path: string) {
     duration: 10000,
     loop: false,
     complete: () => {
-      console.log('done')
+      onComplete()
     },
   })
 }
@@ -48,6 +48,10 @@ export class RibosomeAnimations implements VisualElement {
 
   replicate() {
     this.moveRibosomeToRna()
-    this.replicationAnimation = followPath('.rna-path')
+    this.replicationAnimation = followPath('.rna-path', () => {
+      followPath('.rna-path2', () => {
+        followPath('.rna-path3', () => {})
+      })
+    })
   }
 }
