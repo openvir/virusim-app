@@ -14,12 +14,13 @@ import Sidebar from './components/Sidebar'
 
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
-import { Ribosome } from './components/'
+import { Ribosome, RibosomeAnimations } from './components/'
 import { RnaAnimations } from './components/RnaAnimations'
 import Homepage from './pages/homepage'
 
 const covid19 = new Virus('covid19')
 const rna = new RnaAnimations()
+const ribosome = new RibosomeAnimations()
 const scene = new Scene('')
 const invasion = new Invasion('')
 
@@ -178,6 +179,10 @@ const keyframes: Array<Keyframe> = [
         y: -51,
         rotation: 0,
         scale: 1.7,
+      },
+      {
+        element: ribosome,
+        status: 'replicate',
       },
     ],
   },
