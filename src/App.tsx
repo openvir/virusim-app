@@ -14,7 +14,7 @@ import Sidebar from './components/Sidebar'
 
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
-import Ribosome from './components/Ribosome'
+import { Ribosome } from './components/'
 import { RnaAnimations } from './components/RnaAnimations'
 import Homepage from './pages/homepage'
 
