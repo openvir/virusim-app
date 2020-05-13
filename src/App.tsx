@@ -14,11 +14,13 @@ import Sidebar from './components/Sidebar'
 
 import { Keyframe } from './models/Keyframe'
 import Rna from './components/Rna'
+import { RibosomeAnimations } from './components/'
 import { RnaAnimations } from './components/RnaAnimations'
 import Homepage from './pages/homepage'
 
 const covid19 = new Virus('covid19')
 const rna = new RnaAnimations()
+const ribosome = new RibosomeAnimations()
 const scene = new Scene('')
 const invasion = new Invasion('')
 
@@ -161,6 +163,7 @@ const keyframes: Array<Keyframe> = [
         y: 274,
         rotation: 236,
         scale: 1,
+        // status: 'stopIdle',
       },
       {
         element: covid19,
@@ -176,6 +179,10 @@ const keyframes: Array<Keyframe> = [
         y: -51,
         rotation: 0,
         scale: 1.7,
+      },
+      {
+        element: ribosome,
+        status: 'replicate',
       },
     ],
   },
@@ -241,14 +248,13 @@ const keyframes: Array<Keyframe> = [
 type Props = {}
 
 type State = {
-  keyframe: Keyframe,
+  keyframe: Keyframe
 }
 
 class App extends Component<Props, State> {
   state: Readonly<State> = {
     keyframe: keyframes[0],
   }
-  
 
   keyframeUpdated = (keyframe: Keyframe) => {
     this.setState({
@@ -269,17 +275,18 @@ class App extends Component<Props, State> {
             <Virus />
             <Rna />
             <Cell />
+            {/*<Ribosome />*/}
             <Invasion />
           </Stage>
           <Sidebar>
-              <h4 className="subtitle">{this.state.keyframe.title}</h4>
-              <div className="description">
-                <p>{this.state.keyframe.description}</p>
-              </div>
+            <h4 className="subtitle">{this.state.keyframe.title}</h4>
+            <div className="description">
+              <p>{this.state.keyframe.description}</p>
+            </div>
           </Sidebar>
           <div className="sidebar-tools">
-              <Fullscreen element={ 'simulationContainer' }/>
-              <Zoom />
+            <Fullscreen element={'simulationContainer'} />
+            <Zoom />
           </div>
           <div className="bottombar">
             <Timeline

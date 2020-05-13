@@ -3,11 +3,11 @@
         height="100%"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 362 362"
 >
     <g>
         <path
+                class="rna-path"
                 fill="none"
                 stroke="#F5EDD1"
                 stroke-width="6"
@@ -31,6 +31,7 @@
 	c-2.085-3.757-6.184-7.827-10.01-5.871"
         />
         <path
+                class="rna-path2"
                 fill="none"
                 stroke="#F5EDD1"
                 stroke-width="6"
@@ -53,6 +54,7 @@
 	c4.002,1.054,9.639,0.893,11.028-3.128"
         />
         <path
+                class="rna-path3"
                 fill="none"
                 stroke="#F5EDD1"
                 stroke-width="6"

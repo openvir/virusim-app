@@ -6,10 +6,10 @@ export interface VisualElement {
 
 type Element = {
   element: VisualElement
-  x: number
-  y: number
-  rotation: number | undefined
-  scale: number | 1
+  x?: number
+  y?: number
+  rotation?: number | undefined
+  scale?: number | 1
   status?: string
 }
 

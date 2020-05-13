@@ -3,14 +3,24 @@ import anime from 'animejs'
 import { VisualElement } from '../models/Keyframe'
 
 export class RnaAnimations implements VisualElement {
-  setStatus(status: string, remove: boolean): void {}
+  idleAnimation: anime.AnimeInstance | null = null
+
+  setStatus(status: string, remove: boolean): void {
+    if (status === 'stopIdle') {
+      if (remove) {
+        if (this.idleAnimation) this.idleAnimation.restart()
+      } else {
+        if (this.idleAnimation) this.idleAnimation.pause()
+      }
+    }
+  }
 
   getTarget() {
     return '.rnaWrapper'
   }
 
   idle() {
-    anime({
+    this.idleAnimation = anime({
       targets: '.rna',
       duration: 10000,
       rotate: '360',
